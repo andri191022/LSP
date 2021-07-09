@@ -1,0 +1,11 @@
+C:\Users\andri\source\repos\NEW.LSP.UI\NEW.LSP.Dta\bin\Debug\NEW.LSP.Dta.dll
+C:\Users\andri\source\repos\NEW.LSP.UI\NEW.LSP.Dta\bin\Debug\NEW.LSP.Dta.pdb
+C:\Users\andri\source\repos\NEW.LSP.UI\NEW.LSP.Dta\bin\Debug\DBHelper.dll
+C:\Users\andri\source\repos\NEW.LSP.UI\NEW.LSP.Dta\bin\Debug\NEW.LSP.Dto.dll
+C:\Users\andri\source\repos\NEW.LSP.UI\NEW.LSP.Dta\bin\Debug\MySql.Data.dll
+C:\Users\andri\source\repos\NEW.LSP.UI\NEW.LSP.Dta\bin\Debug\NEW.LSP.Dto.pdb
+C:\Users\andri\source\repos\NEW.LSP.UI\NEW.LSP.Dta\obj\Debug\NEW.LSP.Dta.csproj.AssemblyReference.cache
+C:\Users\andri\source\repos\NEW.LSP.UI\NEW.LSP.Dta\obj\Debug\NEW.LSP.Dta.csproj.CoreCompileInputs.cache
+C:\Users\andri\source\repos\NEW.LSP.UI\NEW.LSP.Dta\obj\Debug\NEW.LSP.Dta.csproj.CopyComplete
+C:\Users\andri\source\repos\NEW.LSP.UI\NEW.LSP.Dta\obj\Debug\NEW.LSP.Dta.dll
+C:\Users\andri\source\repos\NEW.LSP.UI\NEW.LSP.Dta\obj\Debug\NEW.LSP.Dta.pdb
