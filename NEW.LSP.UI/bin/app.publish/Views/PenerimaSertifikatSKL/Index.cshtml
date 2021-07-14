@@ -1,61 +1,102 @@
-﻿@model IEnumerable<NEW.LSP.Dto.Custom.Tb_Penerima_Sertifikat_cstm>
+﻿@model Tuple<List<NEW.LSP.Dto.Custom.Tb_Penerima_Sertifikat_cstm>, List<NEW.LSP.Dto.Custom.Tb_Jejaring_cstm>>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<p>
-    @Html.ActionLink("Add New", "Create", new { area = "" }, new { @class = "btn btn-primary" })
-</p>
 
-<table id="example1" class="table table-bordered table-striped table-hover">
-    <thead>
+<div style="@(Model.Item1.Count() != 0 ? "display:block" : "display:none")">
+    <p>
+        @Html.ActionLink("Add New", "Create", new { area = "" }, new { @class = "btn btn-primary" })
+    </p>
+    <table id="example1" class="table table-bordered table-striped table-hover">
+        <thead>
 
-        <tr>
-            <th style="text-align:center">
-                Kompetensi Keahlian
-                @*@Html.DisplayNameFor(model => model.Nama_KK)*@
-            </th>
-            <th style="text-align:center">
-                Tahun Pelajaran
-                @*@Html.DisplayNameFor(model => model.Tahun_pelajaran)*@
-            </th>
-            <th style="text-align:center">
-                Jumlah Penerima Sertifikat
-                @*@Html.DisplayNameFor(model => model.Jumlah_penerima_sertifikat)*@
-            </th>
-
-            <th style="text-align:center">Aksi</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        @foreach (var item in Model)
-        {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nama_KK)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Tahun_pelajaran)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Jumlah_penerima_sertifikat)
-                </td>
+                <th style="text-align:center">
+                    Kompetensi Keahlian
+                    @*@Html.DisplayNameFor(model => model.Nama_KK)*@
+                </th>
+                <th style="text-align:center">
+                    Tahun Pelajaran
+                    @*@Html.DisplayNameFor(model => model.Tahun_pelajaran)*@
+                </th>
+                <th style="text-align:center">
+                    Jumlah Penerima Sertifikat
+                    @*@Html.DisplayNameFor(model => model.Jumlah_penerima_sertifikat)*@
+                </th>
 
-                <td style="text-align:center">
-                    @Html.ActionLink("   ", "Edit", new { id = item.Kode_Penerima_Sertifikat }, new { @class = "fas fa-edit" }) &nbsp;&nbsp;| &nbsp;&nbsp;
-                    @Html.ActionLink("   ", "Details", new { id = item.Kode_Penerima_Sertifikat }, new { @class = "fas fa-search" }) &nbsp;&nbsp;|&nbsp;&nbsp;
-                    <a href="#">
-                        <span onclick="deleteConfirm('@item.Kode_Penerima_Sertifikat','@item.Nama_KK','@item.Tahun_pelajaran');">
-                            <i class="fa fa-trash" data-toggle="modal" data-target="#modal-primary"></i>
-                        </span>
-                    </a>
-                </td>
+                <th style="text-align:center">Aksi</th>
             </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Item1)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nama_KK)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tahun_pelajaran)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Jumlah_penerima_sertifikat)
+                    </td>
+
+                    <td style="text-align:center">
+                        @Html.ActionLink("   ", "Edit", new { id = item.Kode_Penerima_Sertifikat }, new { @class = "fas fa-edit" }) &nbsp;&nbsp;| &nbsp;&nbsp;
+                        @Html.ActionLink("   ", "Details", new { id = item.Kode_Penerima_Sertifikat }, new { @class = "fas fa-search" }) &nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="#">
+                            <span onclick="deleteConfirm('@item.Kode_Penerima_Sertifikat','@item.Nama_KK','@item.Tahun_pelajaran');">
+                                <i class="fa fa-trash" data-toggle="modal" data-target="#modal-primary"></i>
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div style="@(Model.Item1.Count() == 0 ? "display:block" : "display:none")">
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">&nbsp;</h3>
+        </div>
+
+        @{
+            string nmS = string.Empty;
+            if (Model.Item2.Count() > 0)
+            {
+                nmS = Model.Item2.First().Nama_SekolahJ;
+            }
+            else
+            {
+                nmS = "Anda";
+            }
         }
-    </tbody>
-</table>
+
+        <div class="card-body">
+            Nama Sekolah <u><b> @nmS </b></u> Terdaftar Sebagai Jejaring Dari:
+            <br />
+            <hr />
+            @{ int i = 0;}
+            @foreach (var item in Model.Item2)
+            {
+                i++;
+                <p> @i.  @Html.DisplayFor(modelItem => item.Nama_Sekolah) Pada Kompetensi Keahlian @Html.DisplayFor(modelItem => item.Nama_KK)</p>
+            }
+
+            Jika SMK anda sudah memiliki LSP harap hubungi Admin
+        </div>
+
+        <div class="card-footer">
+            &nbsp;
+        </div>
+    </div>
+</div>
 
 <script>
     $(document).ready(function () {

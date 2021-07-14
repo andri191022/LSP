@@ -7,3 +7,11 @@ C:\Users\andri\source\repos\NEW.LSP.UI\NEW.LSP.Dto\obj\Release\NEW.LSP.Dto.cspro
 C:\Users\andri\source\repos\NEW.LSP.UI\NEW.LSP.Dto\obj\Release\NEW.LSP.Dto.csproj.CopyComplete
 C:\Users\andri\source\repos\NEW.LSP.UI\NEW.LSP.Dto\obj\Release\NEW.LSP.Dto.dll
 C:\Users\andri\source\repos\NEW.LSP.UI\NEW.LSP.Dto\obj\Release\NEW.LSP.Dto.pdb
+D:\Andrik\LSP\LSP\NEW.LSP.Dto\bin\Release\NEW.LSP.Dto.dll
+D:\Andrik\LSP\LSP\NEW.LSP.Dto\bin\Release\NEW.LSP.Dto.pdb
+D:\Andrik\LSP\LSP\NEW.LSP.Dto\bin\Release\MySql.Data.dll
+D:\Andrik\LSP\LSP\NEW.LSP.Dto\obj\Release\NEW.LSP.Dto.csproj.AssemblyReference.cache
+D:\Andrik\LSP\LSP\NEW.LSP.Dto\obj\Release\NEW.LSP.Dto.csproj.CoreCompileInputs.cache
+D:\Andrik\LSP\LSP\NEW.LSP.Dto\obj\Release\NEW.LSP.Dto.csproj.CopyComplete
+D:\Andrik\LSP\LSP\NEW.LSP.Dto\obj\Release\NEW.LSP.Dto.dll
+D:\Andrik\LSP\LSP\NEW.LSP.Dto\obj\Release\NEW.LSP.Dto.pdb

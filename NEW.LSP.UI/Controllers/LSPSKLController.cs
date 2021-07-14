@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace NEW.LSP.UI.Controllers
 {
- 
+
     public class LSPSKLController : BaseController
     {
         // GET: LSPSKL  
@@ -31,9 +31,16 @@ namespace NEW.LSP.UI.Controllers
                 int.TryParse(Session["NPSN"].ToString(), out npsn);
 
                 Tb_LSP_cstm EmpInfo = new Tb_LSP_cstm();
-                EmpInfo = Tb_LSP_cstmItem.GetByNPSN(npsn);
+                List<Tb_Jejaring_cstm> objJerng = new List<Tb_Jejaring_cstm>();
 
-                return View(new m_Tb_LSP_cstm(EmpInfo));
+                EmpInfo = Tb_LSP_cstmItem.GetByNPSN(npsn);
+                if (EmpInfo == null)
+                {
+                    EmpInfo = new Tb_LSP_cstm();
+                    objJerng = Tb_Jejaring_cstmItem.GetAllByJejaringNPSN(npsn);
+                }
+
+                return View(new Tuple<m_Tb_LSP_cstm, List<Tb_Jejaring_cstm>>(new m_Tb_LSP_cstm(EmpInfo), objJerng));
             }
             catch (Exception err)
             {

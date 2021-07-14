@@ -29,9 +29,16 @@ namespace NEW.LSP.UI.Controllers
                 int npsn = 0;
                 int.TryParse(Session["NPSN"].ToString(), out npsn);
 
-                objList = Tb_Jejaring_cstmItem.GetAllByNPSN(npsn);
+                objList = Tb_Jejaring_cstmItem.GetAllByLSPNPSN(npsn);
 
-                return View(objList);
+                List<Tb_Jejaring_cstm> objJerng = new List<Tb_Jejaring_cstm>();
+                if (objList.Count == 0)
+                {
+                    objList = new List<Tb_Jejaring_cstm>();
+                    objJerng = Tb_Jejaring_cstmItem.GetAllByJejaringNPSN(npsn);
+                }
+
+                return View(new Tuple<List<Tb_Jejaring_cstm>, List<Tb_Jejaring_cstm>>(objList, objJerng));
             }
             catch (Exception err)
             {
@@ -73,7 +80,7 @@ namespace NEW.LSP.UI.Controllers
                 Tb_Jejaring_cstm empInfo = new Tb_Jejaring_cstm();
                 List<Tb_Kompetensi_Keahlian> objKK = new List<Tb_Kompetensi_Keahlian>();
                 List<Tb_SMK> objSMK = new List<Tb_SMK>();
-                List<Tb_LSP_cstm> objLSP = new List<Tb_LSP_cstm>();               
+                List<Tb_LSP_cstm> objLSP = new List<Tb_LSP_cstm>();
 
                 objLSP = Tb_LSP_cstmItem.GetAll();
                 objKK = Tb_Kompetensi_KeahlianItem.GetAll();

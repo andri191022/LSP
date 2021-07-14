@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace NEW.LSP.UI.Controllers
 {
-    
+
     public class KKTerlisensiSKLController : BaseController
     {
         // GET: KKTerlisensiSKL 
@@ -33,7 +33,14 @@ namespace NEW.LSP.UI.Controllers
                 EmpInfo = Tb_Kompetensi_Keahlian_Terlisensi_cstmItem.GetAllByNPSN(npsn);
 
                 //returning the employee list to view  
-                return View(EmpInfo);
+                List<Tb_Jejaring_cstm> objJerng = new List<Tb_Jejaring_cstm>();
+                if (EmpInfo.Count == 0)
+                {
+                    EmpInfo = new List<Tb_Kompetensi_Keahlian_Terlisensi_cstm>();
+                    objJerng = Tb_Jejaring_cstmItem.GetAllByJejaringNPSN(npsn);
+                }
+
+                return View(new Tuple<List<Tb_Kompetensi_Keahlian_Terlisensi_cstm>, List<Tb_Jejaring_cstm>>(EmpInfo, objJerng));
             }
             catch (Exception err)
             {
@@ -98,7 +105,7 @@ namespace NEW.LSP.UI.Controllers
                 ///
 
                 return View(new m_Tb_Kompetensi_Keahlian_Terlisensi_cstm(EmpInfo));
-                
+
             }
             catch (Exception err)
             {
@@ -110,7 +117,7 @@ namespace NEW.LSP.UI.Controllers
         [Authorize]
         [HttpPost]
         public ActionResult Create(string id, FormCollection collection)
-        {          
+        {
             try
             {
                 //check
@@ -127,7 +134,7 @@ namespace NEW.LSP.UI.Controllers
                 obj.created = DateTime.Now;
 
                 Tb_Kompetensi_Keahlian_TerlisensiItem.Insert(obj);
-               
+
                 return RedirectToAction("Index");
             }
             catch (Exception err)
@@ -244,7 +251,7 @@ namespace NEW.LSP.UI.Controllers
             {
                 Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return View(err.Message);
             }
-        }      
+        }
 
     }
 }

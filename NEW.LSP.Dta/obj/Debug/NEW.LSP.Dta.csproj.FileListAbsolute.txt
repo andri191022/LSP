@@ -9,3 +9,12 @@ C:\Users\andri\source\repos\NEW.LSP.UI\NEW.LSP.Dta\obj\Debug\NEW.LSP.Dta.csproj.
 C:\Users\andri\source\repos\NEW.LSP.UI\NEW.LSP.Dta\obj\Debug\NEW.LSP.Dta.csproj.CopyComplete
 C:\Users\andri\source\repos\NEW.LSP.UI\NEW.LSP.Dta\obj\Debug\NEW.LSP.Dta.dll
 C:\Users\andri\source\repos\NEW.LSP.UI\NEW.LSP.Dta\obj\Debug\NEW.LSP.Dta.pdb
+D:\Andrik\LSP\LSP\NEW.LSP.Dta\bin\Debug\NEW.LSP.Dta.dll
+D:\Andrik\LSP\LSP\NEW.LSP.Dta\bin\Debug\NEW.LSP.Dta.pdb
+D:\Andrik\LSP\LSP\NEW.LSP.Dta\bin\Debug\NEW.LSP.Dto.dll
+D:\Andrik\LSP\LSP\NEW.LSP.Dta\bin\Debug\NEW.LSP.Dto.pdb
+D:\Andrik\LSP\LSP\NEW.LSP.Dta\obj\Debug\NEW.LSP.Dta.csproj.AssemblyReference.cache
+D:\Andrik\LSP\LSP\NEW.LSP.Dta\obj\Debug\NEW.LSP.Dta.csproj.CoreCompileInputs.cache
+D:\Andrik\LSP\LSP\NEW.LSP.Dta\obj\Debug\NEW.LSP.Dta.csproj.CopyComplete
+D:\Andrik\LSP\LSP\NEW.LSP.Dta\obj\Debug\NEW.LSP.Dta.dll
+D:\Andrik\LSP\LSP\NEW.LSP.Dta\obj\Debug\NEW.LSP.Dta.pdb
