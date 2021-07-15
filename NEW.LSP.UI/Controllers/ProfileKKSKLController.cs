@@ -66,6 +66,7 @@ namespace NEW.LSP.UI.Controllers
         {
             try
             {
+                if (Session["usrTypeLogin"] != null) { if (Session["usrTypeLogin"].ToString().ToUpper() != "SKL") { Response.Redirect("~/Login"); } }
 
                 Tb_SMK_Kompetensi_Keahlian_cstm EmpInfo = new Tb_SMK_Kompetensi_Keahlian_cstm();
                 List<Tb_Kompetensi_Keahlian> objKK = new List<Tb_Kompetensi_Keahlian>();
@@ -88,6 +89,11 @@ namespace NEW.LSP.UI.Controllers
                     ooList.Add(xx.NPSN.ToString(), xx.NPSN.ToString() + " - " + xx.Nama_Sekolah);
                 }
                 ViewBag.dataSMK = dropDownGenerate.toSelectCustom(ooList);
+
+                int npsn = 0;
+                int.TryParse(Session["NPSN"].ToString(), out npsn);
+
+                EmpInfo.NPSN = npsn;
 
                 return View(new m_Tb_SMK_Kompetensi_Keahlian_cstm(EmpInfo));
             }

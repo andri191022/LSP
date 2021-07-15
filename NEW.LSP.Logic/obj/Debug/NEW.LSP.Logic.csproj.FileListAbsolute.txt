@@ -49,3 +49,4 @@ D:\Andrik\LSP\LSP\NEW.LSP.Logic\obj\Debug\NEW.LSP.Logic.csproj.CoreCompileInputs
 D:\Andrik\LSP\LSP\NEW.LSP.Logic\obj\Debug\NEW.LSP.Logic.csproj.CopyComplete
 D:\Andrik\LSP\LSP\NEW.LSP.Logic\obj\Debug\NEW.LSP.Logic.dll
 D:\Andrik\LSP\LSP\NEW.LSP.Logic\obj\Debug\NEW.LSP.Logic.pdb
+D:\Andrik\LSP\LSP\NEW.LSP.Logic\bin\Debug\MySql.Data.dll

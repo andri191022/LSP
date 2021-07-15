@@ -31,6 +31,7 @@ namespace NEW.LSP.UI.Controllers
                 List<Tb_Penerima_Sertifikat_cstm> obj = new List<Tb_Penerima_Sertifikat_cstm>();
 
                 obj = Tb_Penerima_Sertifikat_cstmItem.GetAllByNPSN(npsn);
+                Tb_LSP_cstm objLSP = Tb_LSP_cstmItem.GetByNPSN(npsn);
 
                 List<Tb_Jejaring_cstm> objJerng = new List<Tb_Jejaring_cstm>();
                 if (obj.Count == 0)
@@ -39,7 +40,7 @@ namespace NEW.LSP.UI.Controllers
                     objJerng = Tb_Jejaring_cstmItem.GetAllByJejaringNPSN(npsn);
                 }
 
-                return View(new Tuple<List<Tb_Penerima_Sertifikat_cstm>, List<Tb_Jejaring_cstm>>(obj, objJerng));
+                return View(new Tuple<List<Tb_Penerima_Sertifikat_cstm>, List<Tb_Jejaring_cstm>, Tb_LSP_cstm>(obj, objJerng, objLSP));
             }
             catch (Exception err)
             {

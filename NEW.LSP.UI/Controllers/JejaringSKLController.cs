@@ -30,6 +30,7 @@ namespace NEW.LSP.UI.Controllers
                 int.TryParse(Session["NPSN"].ToString(), out npsn);
 
                 objList = Tb_Jejaring_cstmItem.GetAllByLSPNPSN(npsn);
+                Tb_LSP_cstm objLSP = Tb_LSP_cstmItem.GetByNPSN(npsn);
 
                 List<Tb_Jejaring_cstm> objJerng = new List<Tb_Jejaring_cstm>();
                 if (objList.Count == 0)
@@ -38,7 +39,7 @@ namespace NEW.LSP.UI.Controllers
                     objJerng = Tb_Jejaring_cstmItem.GetAllByJejaringNPSN(npsn);
                 }
 
-                return View(new Tuple<List<Tb_Jejaring_cstm>, List<Tb_Jejaring_cstm>>(objList, objJerng));
+                return View(new Tuple<List<Tb_Jejaring_cstm>, List<Tb_Jejaring_cstm>, Tb_LSP_cstm>(objList, objJerng, objLSP));
             }
             catch (Exception err)
             {

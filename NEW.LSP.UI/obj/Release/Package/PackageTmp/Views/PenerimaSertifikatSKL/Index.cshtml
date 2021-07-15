@@ -1,4 +1,4 @@
-﻿@model Tuple<List<NEW.LSP.Dto.Custom.Tb_Penerima_Sertifikat_cstm>, List<NEW.LSP.Dto.Custom.Tb_Jejaring_cstm>>
+﻿@model Tuple<List<NEW.LSP.Dto.Custom.Tb_Penerima_Sertifikat_cstm>, List<NEW.LSP.Dto.Custom.Tb_Jejaring_cstm>, NEW.LSP.Dto.Custom.Tb_LSP_cstm>
 
 @{
     ViewBag.Title = "Index";
@@ -6,7 +6,7 @@
 }
 
 
-<div style="@(Model.Item1.Count() != 0 ? "display:block" : "display:none")">
+<div style="@(Model.Item3 != null ? "display:block" : "display:none")">
     <p>
         @Html.ActionLink("Add New", "Create", new { area = "" }, new { @class = "btn btn-primary" })
     </p>
@@ -60,7 +60,7 @@
     </table>
 </div>
 
-<div style="@(Model.Item1.Count() == 0 ? "display:block" : "display:none")">
+<div style="@(Model.Item3 == null ? "display:block" : "display:none")">
     <div class="card card-primary">
         <div class="card-header">
             <h3 class="card-title">&nbsp;</h3>

@@ -18,3 +18,4 @@ D:\Andrik\LSP\LSP\NEW.LSP.Dta\obj\Debug\NEW.LSP.Dta.csproj.CoreCompileInputs.cac
 D:\Andrik\LSP\LSP\NEW.LSP.Dta\obj\Debug\NEW.LSP.Dta.csproj.CopyComplete
 D:\Andrik\LSP\LSP\NEW.LSP.Dta\obj\Debug\NEW.LSP.Dta.dll
 D:\Andrik\LSP\LSP\NEW.LSP.Dta\obj\Debug\NEW.LSP.Dta.pdb
+D:\Andrik\LSP\LSP\NEW.LSP.Dta\bin\Debug\MySql.Data.dll
