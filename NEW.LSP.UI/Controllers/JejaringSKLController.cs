@@ -138,7 +138,7 @@ namespace NEW.LSP.UI.Controllers
             try
             {
                 //check
-                if (Request.Form["NPSN"].ToString() != Session["NPSN"].ToString()) { return RedirectToAction("Index"); }
+             //   if (Request.Form["NPSN"].ToString() != Session["NPSN"].ToString()) { return RedirectToAction("Index"); }
                 //check
 
                 userLogin = Session["userLogin"].ToString();
