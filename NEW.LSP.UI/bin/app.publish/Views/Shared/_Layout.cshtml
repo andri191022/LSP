@@ -12,7 +12,6 @@
     @Styles.Render("~/bundle/css")
     @Scripts.Render("~/bundles/jquery")
 
-
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed text-sm">
@@ -27,9 +26,9 @@
             string usrNama = string.Empty;
             if (Session["userLogin"] != null)
             {
-                 usrLogin = Session["userLogin"].ToString();
-                 usrType = Session["usrTypeLogin"].ToString();
-                 usrNama = Session["NPSN"].ToString();
+                usrLogin = Session["userLogin"].ToString();
+                usrType = Session["usrTypeLogin"].ToString();
+                usrNama = Session["NPSN"].ToString();
             }
         }
         <!-- Navbar -->
@@ -243,6 +242,7 @@
 
 
     <script>
+        $.validator.setDefaults({ ignore: [] });
 
         $.widget.bridge('uibutton', $.ui.button)
         $(function () {

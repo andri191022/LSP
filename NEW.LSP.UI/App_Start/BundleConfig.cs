@@ -72,7 +72,6 @@ namespace NEW.LSP.UI
                       "~/Content/sweetalert2/sweetalert2.min.js",
                       "~/Content/dist/js/chosen.jquery.min.js",
                       "~/Content/dist/js/init.js"
-
                       ));
 
         }

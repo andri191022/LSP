@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace NEW.LSP.UI.Models
 {
@@ -37,6 +38,7 @@ namespace NEW.LSP.UI.Models
         [Display(Name = "Nomor Lisensi")]
         public new string Nomer_Lisensi { get; set; }
 
+        //[Remote("IsAlreadyKK", "PenerimaSertifikat", ErrorMessage = "Kode KK sudah ada di database.", AdditionalFields = "Kode_Penerima_Sertifikat, Nomer_Lisensi, Kode_KK, aeMode")]
         [Required(ErrorMessage = "Harap masukan data Kode Kompetensi Keahlian")]
         [Display(Name = "Kode Kompetensi Keahlian")]
         public new int Kode_KK { get; set; }

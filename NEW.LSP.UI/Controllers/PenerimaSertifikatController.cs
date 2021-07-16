@@ -55,7 +55,7 @@ namespace NEW.LSP.UI.Controllers
             }
             catch (Exception err)
             {
-                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return View(err.Message);
+                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return RedirectToAction("Index");    
             }
         }
 
@@ -105,7 +105,7 @@ namespace NEW.LSP.UI.Controllers
             }
             catch (Exception err)
             {
-                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return View(err.Message);
+                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return RedirectToAction("Index");    
             }
         }
 
@@ -184,7 +184,7 @@ namespace NEW.LSP.UI.Controllers
             }
             catch (Exception err)
             {
-                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return View(err.Message);
+                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return RedirectToAction("Index");    
             }
         }
 
@@ -211,7 +211,7 @@ namespace NEW.LSP.UI.Controllers
             }
             catch (Exception err)
             {
-                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return View(err.Message);
+                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return RedirectToAction("Index");    
             }
         }
 
@@ -230,10 +230,27 @@ namespace NEW.LSP.UI.Controllers
             }
             catch (Exception err)
             {
-                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return View(err.Message);
+                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return RedirectToAction("Index");    
             }
         }
 
+        [Authorize]
+        public JsonResult IsAlreadyKK(Int32 Kode_Penerima_Sertifikat, string Nomer_Lisensi, Int32 Kode_KK, string aeMode)
+        {
+            bool status;
+            try
+            {
+                status = ChecNPSNKK.IsAlreadyNPSNKK(Kode_Penerima_Sertifikat, Nomer_Lisensi, Kode_KK, aeMode);
 
+                return Json(status, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception err)
+            {
+                //return Json(true, JsonRequestBehavior.AllowGet);
+                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj);
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+
+        }
     }
 }

@@ -4,6 +4,7 @@ using NEW.LSP.Dto;
 using NEW.LSP.Dto.Custom;
 using NEW.LSP.UI.Models;
 using System;
+using System.Reflection;
 using System.Web.Mvc;
 
 
@@ -33,7 +34,7 @@ namespace NEW.LSP.UI.Controllers
             }
             catch (Exception err)
             {
-                return View(err.Message);
+                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return View(err.Message);
             }
         }
 
@@ -68,7 +69,7 @@ namespace NEW.LSP.UI.Controllers
             }
             catch (Exception err)
             {
-                return View(err.Message);
+                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return View(err.Message);
             }
         }
        

@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>D:\Andrik\LSP\LSP\NEW.LSP.UI\bin\app.publish\</_PublishTargetUrl>
-    <History>True|2021-07-14T16:40:41.9224510Z;True|2021-07-14T23:40:31.4337078+07:00;True|2021-07-14T11:05:03.8682191+07:00;True|2021-07-14T11:04:52.4762870+07:00;True|2021-07-09T12:28:00.1827642+07:00;</History>
+    <History>True|2021-07-16T03:18:09.8857773Z;True|2021-07-16T10:17:51.1547244+07:00;True|2021-07-16T09:55:32.9932642+07:00;True|2021-07-14T23:40:41.9224510+07:00;True|2021-07-14T23:40:31.4337078+07:00;True|2021-07-14T11:05:03.8682191+07:00;True|2021-07-14T11:04:52.4762870+07:00;True|2021-07-09T12:28:00.1827642+07:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
@@ -27,10 +27,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/09/2021 08:51:12</publishTime>
     </File>
     <File Include="bin/NEW.LSP.Dta.dll">
-      <publishTime>07/14/2021 23:40:29</publishTime>
+      <publishTime>07/16/2021 09:55:30</publishTime>
     </File>
     <File Include="bin/NEW.LSP.Dta.pdb">
-      <publishTime>07/14/2021 23:40:29</publishTime>
+      <publishTime>07/16/2021 09:55:30</publishTime>
     </File>
     <File Include="bin/NEW.LSP.Dto.dll">
       <publishTime>07/14/2021 23:40:29</publishTime>
@@ -39,16 +39,16 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/14/2021 23:40:29</publishTime>
     </File>
     <File Include="bin/NEW.LSP.Logic.dll">
-      <publishTime>07/15/2021 10:37:16</publishTime>
+      <publishTime>07/16/2021 10:17:50</publishTime>
     </File>
     <File Include="bin/NEW.LSP.Logic.pdb">
-      <publishTime>07/15/2021 10:37:16</publishTime>
+      <publishTime>07/16/2021 10:17:50</publishTime>
     </File>
     <File Include="bin/NEW.LSP.UI.dll">
-      <publishTime>07/15/2021 10:37:49</publishTime>
+      <publishTime>07/16/2021 10:17:50</publishTime>
     </File>
     <File Include="bin/NEW.LSP.UI.pdb">
-      <publishTime>07/15/2021 10:37:49</publishTime>
+      <publishTime>07/16/2021 10:17:50</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>07/09/2021 08:51:14</publishTime>
@@ -195,7 +195,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/09/2021 08:51:12</publishTime>
     </File>
     <File Include="Views/ADProvinsi/Create.cshtml">
-      <publishTime>07/09/2021 08:51:12</publishTime>
+      <publishTime>07/15/2021 21:47:04</publishTime>
     </File>
     <File Include="Views/ADProvinsi/Details.cshtml">
       <publishTime>07/09/2021 08:51:12</publishTime>
@@ -207,7 +207,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/09/2021 08:51:12</publishTime>
     </File>
     <File Include="Views/ADSekolah/Create.cshtml">
-      <publishTime>07/09/2021 08:51:12</publishTime>
+      <publishTime>07/15/2021 21:47:22</publishTime>
     </File>
     <File Include="Views/ADSekolah/Details.cshtml">
       <publishTime>07/09/2021 08:51:12</publishTime>
@@ -237,10 +237,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/14/2021 23:12:48</publishTime>
     </File>
     <File Include="Views/JejaringSKL/Create.cshtml">
-      <publishTime>07/09/2021 08:51:12</publishTime>
+      <publishTime>07/15/2021 21:43:49</publishTime>
     </File>
     <File Include="Views/JejaringSKL/Details.cshtml">
-      <publishTime>07/09/2021 08:51:12</publishTime>
+      <publishTime>07/15/2021 21:28:08</publishTime>
     </File>
     <File Include="Views/JejaringSKL/Edit.cshtml">
       <publishTime>07/09/2021 08:51:12</publishTime>
@@ -249,7 +249,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/14/2021 23:37:11</publishTime>
     </File>
     <File Include="Views/KKeahlian/Create.cshtml">
-      <publishTime>07/09/2021 08:51:12</publishTime>
+      <publishTime>07/15/2021 21:45:39</publishTime>
     </File>
     <File Include="Views/KKeahlian/Details.cshtml">
       <publishTime>07/09/2021 08:51:12</publishTime>
@@ -273,7 +273,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/14/2021 23:11:22</publishTime>
     </File>
     <File Include="Views/KKTerlisensiSKL/Create.cshtml">
-      <publishTime>07/09/2021 08:51:12</publishTime>
+      <publishTime>07/15/2021 21:44:57</publishTime>
     </File>
     <File Include="Views/KKTerlisensiSKL/Details.cshtml">
       <publishTime>07/09/2021 08:51:12</publishTime>
@@ -318,19 +318,19 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/14/2021 23:14:23</publishTime>
     </File>
     <File Include="Views/PenerimaSertifikatSKL/Create.cshtml">
-      <publishTime>07/09/2021 08:51:12</publishTime>
+      <publishTime>07/16/2021 09:27:42</publishTime>
     </File>
     <File Include="Views/PenerimaSertifikatSKL/Details.cshtml">
-      <publishTime>07/09/2021 08:51:12</publishTime>
+      <publishTime>07/15/2021 21:27:07</publishTime>
     </File>
     <File Include="Views/PenerimaSertifikatSKL/Edit.cshtml">
-      <publishTime>07/09/2021 08:51:12</publishTime>
+      <publishTime>07/15/2021 22:35:12</publishTime>
     </File>
     <File Include="Views/PenerimaSertifikatSKL/Index.cshtml">
       <publishTime>07/14/2021 23:39:05</publishTime>
     </File>
     <File Include="Views/ProfileKKSKL/Create.cshtml">
-      <publishTime>07/09/2021 08:51:12</publishTime>
+      <publishTime>07/15/2021 21:30:32</publishTime>
     </File>
     <File Include="Views/ProfileKKSKL/Details.cshtml">
       <publishTime>07/09/2021 08:51:12</publishTime>
@@ -351,7 +351,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/09/2021 08:51:12</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>07/09/2021 08:51:12</publishTime>
+      <publishTime>07/16/2021 09:25:48</publishTime>
     </File>
     <File Include="Views/Shared/_MenuSharedProp.cshtml">
       <publishTime>07/09/2021 08:51:12</publishTime>
@@ -384,7 +384,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/14/2021 23:14:49</publishTime>
     </File>
     <File Include="Views/TahunPelajaran/Create.cshtml">
-      <publishTime>07/09/2021 08:51:12</publishTime>
+      <publishTime>07/15/2021 21:46:30</publishTime>
     </File>
     <File Include="Views/TahunPelajaran/Details.cshtml">
       <publishTime>07/09/2021 08:51:12</publishTime>
@@ -402,7 +402,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/09/2021 08:51:12</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/14/2021 23:40:30</publishTime>
+      <publishTime>07/16/2021 09:55:31</publishTime>
     </File>
   </ItemGroup>
 </Project>
