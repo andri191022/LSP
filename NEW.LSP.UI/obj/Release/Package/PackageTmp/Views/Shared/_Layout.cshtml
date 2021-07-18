@@ -24,11 +24,28 @@
             string usrLogin = string.Empty;
             string usrType = string.Empty;
             string usrNama = string.Empty;
-            if (Session["userLogin"] != null)
+
+            if (User.Identity.IsAuthenticated)
             {
-                usrLogin = Session["userLogin"].ToString();
-                usrType = Session["usrTypeLogin"].ToString();
-                usrNama = Session["NPSN"].ToString();
+                if (Session["userLogin"] == null)
+                {
+                    HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+                    FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
+
+                    usrType = ticket.Name.Split('|')[1];
+                    usrNama = ticket.Name.Split('|')[2];
+                    usrLogin = ticket.Name.Split('|')[0];
+                }
+                else
+                {
+                    usrType = Session["usrTypeLogin"].ToString();
+                    usrNama = Session["NPSN"].ToString();
+                    usrLogin = Session["userLogin"].ToString();
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login");
             }
         }
         <!-- Navbar -->
@@ -90,19 +107,19 @@
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 @*<div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                        <div class="image">
-                                <img src="~/Content/dist/img/logo forum lsp jawa tengah.jpg" class="img-circle elevation-2" alt="User Image">
-                            </div>
-                        <div class="info text-center">
-                            <a class="d-block">
-                                @{
-                                    var usrLogin = Session["userLogin"].ToString();
-                                }
-
-                                @usrLogin
-                            </a>
+                    <div class="image">
+                            <img src="~/Content/dist/img/logo forum lsp jawa tengah.jpg" class="img-circle elevation-2" alt="User Image">
                         </div>
-                    </div>*@
+                    <div class="info text-center">
+                        <a class="d-block">
+                            @{
+                                var usrLogin = Session["userLogin"].ToString();
+                            }
+
+                            @usrLogin
+                        </a>
+                    </div>
+                </div>*@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2" id="mainMenu">
@@ -142,9 +159,9 @@
                         </div><!-- /.col -->
                         <div class="col-sm-6" id="linkBar">
                             @*<ol class="breadcrumb float-sm-right">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active">Dashboard v1</li>
-                                </ol>*@
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Dashboard v1</li>
+                            </ol>*@
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -167,11 +184,31 @@
         @*--end of body--*@
 
         <!-- /.content-wrapper -->
-        <footer class="main-footer" style="text-align:center">
+        @*<footer class="main-footer" style="text-align:center">
             <strong>Copyright &copy; 2021-2023 <a href="https://www.linkedin.com/in/sahrul-ramadhani-2402481b8/">sahrul.r.dhani@gmail.com</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
                 <a><i class="fa fa-snowflake"></i> </a>
+            </div>
+        </footer>*@
+
+
+        <footer class="main-footer" style="background-image: linear-gradient(to bottom, #ffffff, #e1e3e4, #a1c5c5, #cec4a2, #c8ccc0); color: #1c1f1e; ">
+            <div class="row">
+                <div class="col-md-7">
+                    <strong>Copyright © 2021-2023 <a href="http://forumlspp1jateng.id">Forum LSP P1 SMK Provinsi Jawa Tengah</a>.</strong>
+                    All rights reserved.
+                </div>
+
+                <div class="col-md-2"></div>
+
+                <div class="col-md-3 text-right">
+                    <a href="https://www.linkedin.com/in/sahrul-ramadhani-2402481b8/">Created by Sahrul Ramadhani</a>&nbsp;
+                    <div class="float-right d-none d-sm-inline-block">
+                        <a><i class="fa fa-snowflake"></i> </a>
+                    </div>
+                </div>
+
             </div>
         </footer>
 
