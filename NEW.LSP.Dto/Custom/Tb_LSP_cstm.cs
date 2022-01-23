@@ -38,6 +38,7 @@ namespace NEW.LSP.Dto.Custom
 
             obj.Nama_Sekolah = reader["Nama_Sekolah"] == DBNull.Value ? null : reader["Nama_Sekolah"].ToString();
             obj.NamaKabupaten = reader["NamaKabupaten"] == DBNull.Value ? null : reader["NamaKabupaten"].ToString();
+
             return obj;
         }
     }

@@ -17,17 +17,18 @@ namespace NEW.LSP.UI.Controllers
     public class HomeController : BaseController
     {
         public string userLogin = string.Empty;
-        public string usrTypeLogin = string.Empty; 
+        public string usrTypeLogin = string.Empty;
 
         [Authorize]
         public ActionResult Index()
         {
             try
             {
-                ViewBag.Title = "Home Page";
+                ViewBag.Title = "Home Page";           
+
                 if (Session["usrTypeLogin"] != null) { if (Session["usrTypeLogin"].ToString().ToUpper() != "PROP") { Response.Redirect("~/Login"); } }
 
-                var tupleModel = new Tuple<m_Tb_Home, List<Tb_Approval_KKTerlisensi_cstm>>(new m_Tb_Home(Tb_Home_cstmItem.GetAll().FirstOrDefault()), Tb_Approval_KKTerlisensiItem.GetAllCustom());
+                var tupleModel = new Tuple<m_Tb_Home, List<Tb_Approval_KKTerlisensi_cstm>, List<Tb_Pengumuman>>(new m_Tb_Home(Tb_Home_cstmItem.GetAll().FirstOrDefault()), Tb_Approval_KKTerlisensiItem.GetAllCustom(), Tb_Pengumuman_cstmItem.GetByDateAktif());
                 return View(tupleModel);
             }
             catch (Exception err)

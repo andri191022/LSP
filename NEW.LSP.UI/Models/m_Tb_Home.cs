@@ -17,6 +17,7 @@ namespace NEW.LSP.UI.Models
             this.jmlLSP = item.jmlLSP;
             this.jmlKKT = item.jmlKKT;
             this.jmlPS = item.jmlPS;
+            this.descript = item.descript;
         }
         [Display(Name = "Jumlah SMK")]
         public new Int32? jmlSMK { get; set; }
@@ -30,5 +31,6 @@ namespace NEW.LSP.UI.Models
         public new Int32? jmlKKT { get; set; }
         [Display(Name = "Jumlah Penerima Sertifikat")]
         public new Int32? jmlPS { get; set; }
+        public new string descript { get; set; }
     }
 }

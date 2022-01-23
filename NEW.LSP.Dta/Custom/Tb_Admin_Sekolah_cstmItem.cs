@@ -69,5 +69,6 @@ namespace NEW.LSP.Dta.Custom
             return DBUtil.ExecuteMapper<Tb_Admin_Sekolah_cstm>(context, new Tb_Admin_Sekolah_cstm()).FirstOrDefault();
         }
 
+
     }
 }

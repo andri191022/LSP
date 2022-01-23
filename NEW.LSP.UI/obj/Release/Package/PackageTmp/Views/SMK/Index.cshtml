@@ -50,7 +50,7 @@
                     @Html.ActionLink("   ", "Details", new { id = item.NPSN }, new { @class = "fas fa-search" }) &nbsp;&nbsp;|&nbsp;&nbsp;
                     @*@Html.ActionLink("   ", "Delete", new { id = item.NPSN }, new { @class = "fa fa-trash", onclick = "deleteConfirm(" + @item.NPSN + ");" })*@
                     <a href="#">
-                        <span onclick="deleteConfirm('@item.NPSN','@item.Nama_Sekolah.Replace("'","")');">
+                        <span onclick="deleteConfirm('@item.NPSN','@item.Nama_Sekolah');">
                             <i class="fa fa-trash" data-toggle="modal" data-target="#modal-primary"></i>
                         </span>
                     </a>

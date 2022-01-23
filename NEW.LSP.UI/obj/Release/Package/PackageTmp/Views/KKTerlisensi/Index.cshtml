@@ -60,13 +60,12 @@
                     @Html.ActionLink("   ", "Edit", new { id = item.Kode_KK_Terlisensi }, new { @class = "fas fa-edit" }) &nbsp;&nbsp;| &nbsp;&nbsp;
                     @Html.ActionLink("   ", "Details", new { id = item.Kode_KK_Terlisensi }, new { @class = "fas fa-search" }) &nbsp;&nbsp;|&nbsp;&nbsp;
                     <a href="#">
-                        <span onclick="deleteConfirm('@item.Kode_KK_Terlisensi', '@item.Nama_Sekolah.Replace("'","")' ,'@item.Nama_KK');">
+                        <span onclick="deleteConfirm('@item.Kode_KK_Terlisensi', '@item.Nama_Sekolah','@item.Nama_KK');">
                             <i class="fa fa-trash" data-toggle="modal" data-target="#modal-primary"></i>
                         </span>
                     </a>
                 </td>
             </tr>
-
         }
     </tbody>
 </table>
@@ -83,8 +82,6 @@
         $("#dashbordMain").html("Data Kompetensi Keahlian Terlisensi");
 
         ADMenuPropinsi('mnuKKTerlisensi');
-
-        //deleteConfirm('3220', 'SMK MA &#39; ARIF SALAM', 'TEKNIK ELEKTRIKA INDUSTRI');
     });
 
     function deleteConfirm(id, a, b) {
@@ -96,10 +93,6 @@
     function deleteOK() {
         var id = $("#noID").text();
         var ss = 'KKTerlisensi/Delete/' + id;
-        window.location.href = ss;       
-
+        window.location.href = ss;
     }
-
-
-
 </script>

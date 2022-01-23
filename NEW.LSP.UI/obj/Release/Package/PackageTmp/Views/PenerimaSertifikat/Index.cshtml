@@ -62,7 +62,7 @@
                     @Html.ActionLink("   ", "Edit", new { id = item.Kode_Penerima_Sertifikat }, new { @class = "fas fa-edit" }) &nbsp;&nbsp;| &nbsp;&nbsp;
                     @Html.ActionLink("   ", "Details", new { id = item.Kode_Penerima_Sertifikat }, new { @class = "fas fa-search" }) &nbsp;&nbsp;|&nbsp;&nbsp;
                     <a href="#">
-                        <span onclick="deleteConfirm('@item.Kode_Penerima_Sertifikat','@item.Nama_Sekolah.Replace("'","")','@item.Nama_KK');">
+                        <span onclick="deleteConfirm('@item.Kode_Penerima_Sertifikat','@item.Nama_Sekolah','@item.Nama_KK');">
                             <i class="fa fa-trash" data-toggle="modal" data-target="#modal-primary"></i>
                         </span>
                     </a>

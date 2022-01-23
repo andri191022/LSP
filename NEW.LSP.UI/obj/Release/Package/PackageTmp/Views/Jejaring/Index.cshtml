@@ -60,7 +60,7 @@
                     @Html.ActionLink("   ", "Edit", new { id = item.Kode_Jejaring }, new { @class = "fas fa-edit" }) &nbsp;&nbsp;| &nbsp;&nbsp;
                     @Html.ActionLink("   ", "Details", new { id = item.Kode_Jejaring }, new { @class = "fas fa-search" }) &nbsp;&nbsp;|&nbsp;&nbsp;
                     <a href="#">
-                        <span onclick="deleteConfirm('@item.Kode_Jejaring','@item.Nama_SekolahJ.Replace("'","")','@item.Nama_KK');">
+                        <span onclick="deleteConfirm('@item.Kode_Jejaring','@item.Nama_SekolahJ','@item.Nama_KK');">
                             <i class="fa fa-trash" data-toggle="modal" data-target="#modal-primary"></i>
                         </span>
                     </a>

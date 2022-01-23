@@ -53,7 +53,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MySql.Data, Version=8.0.25.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\MySql.Data.dll</HintPath>
+      <HintPath>..\..\..\Andrik\LSP\LSP\packages\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -112,6 +112,7 @@
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="img\logo.png" />
+    <Content Include="img\service-details-1.jpg" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.js" />
@@ -141,6 +142,7 @@
     <Compile Include="Controllers\ADProvinsiController.cs" />
     <Compile Include="Controllers\ADSekolahController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeSKLController.cs" />
     <Compile Include="Controllers\JejaringController.cs" />
@@ -153,6 +155,8 @@
     <Compile Include="Controllers\LSPSKLController.cs" />
     <Compile Include="Controllers\PenerimaSertifikatController.cs" />
     <Compile Include="Controllers\PenerimaSertifikatSKLController.cs" />
+    <Compile Include="Controllers\PengumumanController.cs" />
+    <Compile Include="Controllers\PengumumanSKLController.cs" />
     <Compile Include="Controllers\ProfileKKSKLController.cs" />
     <Compile Include="Controllers\ProfileSKLController.cs" />
     <Compile Include="Controllers\SMKController.cs" />
@@ -162,6 +166,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper_Code\AllowFileSizeAttribute.cs" />
     <Compile Include="Models\m_Tb_Admin_Provinsi.cs" />
     <Compile Include="Models\m_Tb_Admin_Sekolah.cs" />
     <Compile Include="Models\m_Tb_Admin_Sekolah_cstm.cs" />
@@ -177,6 +182,7 @@
     <Compile Include="Models\m_Tb_LSP_cstm.cs" />
     <Compile Include="Models\m_Tb_Penerima_Sertifikat.cs" />
     <Compile Include="Models\m_Tb_Penerima_Sertifikat_cstm.cs" />
+    <Compile Include="Models\m_Tb_Pengumuman.cs" />
     <Compile Include="Models\m_Tb_SMK.cs" />
     <Compile Include="Models\m_Tb_SMK_cstm.cs" />
     <Compile Include="Models\m_Tb_SMK_Kompetensi_Keahlian.cs" />
@@ -246,6 +252,13 @@
     <Content Include="Views\JejaringSKL\Create.cshtml" />
     <Content Include="Views\JejaringSKL\Edit.cshtml" />
     <Content Include="Views\UbahPassSKL\Index.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Pengumuman\Index.cshtml" />
+    <Content Include="Views\Pengumuman\Create.cshtml" />
+    <Content Include="Views\Pengumuman\Details.cshtml" />
+    <Content Include="Views\Pengumuman\Edit.cshtml" />
+    <Content Include="Views\PengumumanSKL\Index.cshtml" />
+    <Content Include="Views\PengumumanSKL\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

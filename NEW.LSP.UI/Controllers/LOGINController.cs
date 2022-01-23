@@ -28,7 +28,7 @@ namespace NEW.LSP.UI.Controllers
             }
             catch (Exception err)
             {
-                return RedirectToAction("Index");    
+                return View(err.Message);
             }
         }
 
@@ -49,6 +49,16 @@ namespace NEW.LSP.UI.Controllers
                     {
                         FormsAuthentication.SetAuthCookie(Item.Username + "|" + Item.typeUser + "|" + Item.Nama, false);
 
+                        string urls = Request.QueryString["ReturnUrl"];
+                        if (!string.IsNullOrEmpty(urls))
+                        {
+                            List<string> stringList = urls.Split('/').ToList();
+
+                            if (stringList.Count == 4)
+                            {
+                                return RedirectToAction(stringList[2], stringList[1], new { id = stringList[3] });
+                            }
+                        }
                         if (Item.typeUser == "PROP")
                         {
                             return RedirectToAction("Index", "Home");
@@ -70,7 +80,7 @@ namespace NEW.LSP.UI.Controllers
             }
             catch (Exception err)
             {
-                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return RedirectToAction("Index");    
+                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return View(err.Message);
                 //return RedirectToAction("Index", "Login");
             }
         }
@@ -79,7 +89,7 @@ namespace NEW.LSP.UI.Controllers
         {
             FormsAuthentication.SignOut();
             Session.Abandon();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Default");
         }
 
     }

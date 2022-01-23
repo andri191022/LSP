@@ -34,10 +34,6 @@
     <Reference Include="DBHelper">
       <HintPath>..\..\SMK.BAWANG.UI\packages\DBHelper.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.25.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\MySql.Data.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -70,6 +66,7 @@
     <Compile Include="Tb_LSP.cs" />
     <Compile Include="Tb_Menu.cs" />
     <Compile Include="Tb_Penerima_Sertifikat.cs" />
+    <Compile Include="Tb_Pengumuman.cs" />
     <Compile Include="Tb_SMK.cs" />
     <Compile Include="Tb_SMK_Kompetensi_Keahlian.cs" />
     <Compile Include="Tb_Tahun_Pelajaran.cs" />

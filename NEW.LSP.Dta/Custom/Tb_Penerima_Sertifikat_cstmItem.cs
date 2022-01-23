@@ -1,5 +1,4 @@
 ﻿using DataAccessLayer;
-using NEW.LSP.Dto;
 using NEW.LSP.Dto.Custom;
 using System;
 using System.Collections.Generic;
@@ -75,31 +74,6 @@ namespace NEW.LSP.Dta.Custom
             context.CommandText = sqlQuery;
             context.CommandType = System.Data.CommandType.Text;
             return DBUtil.ExecuteMapper<Tb_Penerima_Sertifikat_cstm>(context, new Tb_Penerima_Sertifikat_cstm());
-        }
-
-        public static Tb_Penerima_Sertifikat GetByLisensiKK(string Nomer_Lisensi, Int32 kk_code)
-        {
-            IDBHelper context = new DBHelper();
-            string sqlQuery = @"select [Kode_Penerima_Sertifikat] ,[Nomer_Lisensi] ,[Kode_KK] ,[IDTahun_pelajaran] ,[Jumlah_penerima_sertifikat] ,[isDeleted] ,[created] ,[creator] ,[edited] ,[editor] from Tb_Penerima_Sertifikat
-                             where Nomer_Lisensi= @Nomer_Lisensi and  Kode_KK =@Kode_KK ";
-            context.AddParameter("@Nomer_Lisensi", Nomer_Lisensi);
-            context.AddParameter("@Kode_KK", kk_code);
-            context.CommandText = sqlQuery;
-            context.CommandType = System.Data.CommandType.Text;
-            return DBUtil.ExecuteMapper<Tb_Penerima_Sertifikat>(context, new Tb_Penerima_Sertifikat()).FirstOrDefault();
-        }
-
-        public static Tb_Penerima_Sertifikat GetByLisensiKK(Int32 KPS, string Nomer_Lisensi, Int32 kk_code)
-        {
-            IDBHelper context = new DBHelper();
-            string sqlQuery = @"select [Kode_Penerima_Sertifikat] ,[Nomer_Lisensi] ,[Kode_KK] ,[IDTahun_pelajaran] ,[Jumlah_penerima_sertifikat] ,[isDeleted] ,[created] ,[creator] ,[edited] ,[editor] from Tb_Penerima_Sertifikat
-                             where Nomer_Lisensi= @Nomer_Lisensi and  Kode_KK =@Kode_KK and Kode_Penerima_Sertifikat <> @KPS ";
-            context.AddParameter("@Nomer_Lisensi", Nomer_Lisensi);
-            context.AddParameter("@Kode_KK", kk_code);
-            context.AddParameter("@KPS", KPS);
-            context.CommandText = sqlQuery;
-            context.CommandType = System.Data.CommandType.Text;
-            return DBUtil.ExecuteMapper<Tb_Penerima_Sertifikat>(context, new Tb_Penerima_Sertifikat()).FirstOrDefault();
         }
 
     }

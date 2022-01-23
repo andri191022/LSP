@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace NEW.LSP.UI.Controllers
 {
-
+ 
     public class LSPSKLController : BaseController
     {
         // GET: LSPSKL  
@@ -31,16 +31,11 @@ namespace NEW.LSP.UI.Controllers
                 int.TryParse(Session["NPSN"].ToString(), out npsn);
 
                 Tb_LSP_cstm EmpInfo = new Tb_LSP_cstm();
-                List<Tb_Jejaring_cstm> objJerng = new List<Tb_Jejaring_cstm>();
-
                 EmpInfo = Tb_LSP_cstmItem.GetByNPSN(npsn);
-                if (EmpInfo == null)
-                {
-                    EmpInfo = new Tb_LSP_cstm();
-                    objJerng = Tb_Jejaring_cstmItem.GetAllByJejaringNPSN(npsn);
-                }
 
-                return View(new Tuple<m_Tb_LSP_cstm, List<Tb_Jejaring_cstm>>(new m_Tb_LSP_cstm(EmpInfo), objJerng));
+                m_Tb_LSP_cstm obj = new m_Tb_LSP_cstm();
+
+                return View(EmpInfo == null? obj: new m_Tb_LSP_cstm(EmpInfo));
             }
             catch (Exception err)
             {
@@ -68,7 +63,7 @@ namespace NEW.LSP.UI.Controllers
             }
             catch (Exception err)
             {
-                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return RedirectToAction("Index");    
+                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return View(err.Message);
             }
         }
 
@@ -101,7 +96,7 @@ namespace NEW.LSP.UI.Controllers
             }
             catch (Exception err)
             {
-                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return RedirectToAction("Index");    
+                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return View(err.Message);
             }
         }
     }

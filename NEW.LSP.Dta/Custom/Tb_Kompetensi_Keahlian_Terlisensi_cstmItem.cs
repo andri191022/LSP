@@ -80,7 +80,5 @@ namespace NEW.LSP.Dta.Custom
             return DBUtil.ExecuteMapper<Tb_Kompetensi_Keahlian_Terlisensi_cstm>(context, new Tb_Kompetensi_Keahlian_Terlisensi_cstm());
         }
 
-      
-
     }
 }
