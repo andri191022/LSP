@@ -17,12 +17,20 @@
                 @*@Html.DisplayNameFor(model => model.Nama_KK)*@
             </th>
             <th style="text-align:center">
+                Skema
+                @*@Html.DisplayNameFor(model => model.Nama_KK)*@
+            </th>
+            <th style="text-align:center">
                 Tahun Pelajaran
                 @*@Html.DisplayNameFor(model => model.Tahun_pelajaran)*@
             </th>
             <th style="text-align:center">
                 Jumlah Penerima Sertifikat
                 @*@Html.DisplayNameFor(model => model.Jumlah_penerima_sertifikat)*@
+            </th>
+            <th style="text-align:center">
+                Lampiran
+                @*@Html.DisplayNameFor(model => model.Tahun_pelajaran)*@
             </th>
 
             <th style="text-align:center">Aksi</th>
@@ -32,27 +40,34 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nama_KK)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Tahun_pelajaran)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Jumlah_penerima_sertifikat)
-                </td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nama_KK)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Skema)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tahun_pelajaran)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Jumlah_penerima_sertifikat)
+            </td>
+            <td>
+                @{ string fileName = @item.UploadName;}
 
-                <td style="text-align:center">
-                    @Html.ActionLink("   ", "Edit", new { id = item.Kode_Penerima_Sertifikat }, new { @class = "fas fa-edit" }) &nbsp;&nbsp;| &nbsp;&nbsp;
-                    @Html.ActionLink("   ", "Details", new { id = item.Kode_Penerima_Sertifikat }, new { @class = "fas fa-search" }) &nbsp;&nbsp;|&nbsp;&nbsp;
-                    <a href="#">
-                        <span onclick="deleteConfirm('@item.Kode_Penerima_Sertifikat','@item.Nama_KK','@item.Tahun_pelajaran');">
-                            <i class="fa fa-trash" data-toggle="modal" data-target="#modal-primary"></i>
-                        </span>
-                    </a>
-                </td>
-            </tr>
+                <a href="~/UploadedFiles/@fileName" target="_blank">@Html.DisplayFor(modelItem => item.UploadName)</a>
+            </td>
+            <td style="text-align:center">
+                @Html.ActionLink("   ", "Edit", new { id = item.Kode_Penerima_Sertifikat }, new { @class = "fas fa-edit" }) &nbsp;&nbsp;| &nbsp;&nbsp;
+                @Html.ActionLink("   ", "Details", new { id = item.Kode_Penerima_Sertifikat }, new { @class = "fas fa-search" }) &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="#">
+                    <span onclick="deleteConfirm('@item.Kode_Penerima_Sertifikat','@item.Nama_KK','@item.Tahun_pelajaran');">
+                        <i class="fa fa-trash" data-toggle="modal" data-target="#modal-primary"></i>
+                    </span>
+                </a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

@@ -66,7 +66,7 @@ namespace NEW.LSP.UI.Controllers
 
         // GET: Jejaring/Create
         [Authorize]
-        public ActionResult Create()
+        public ActionResult Create(string id)
         {
             try
             {
@@ -118,7 +118,7 @@ namespace NEW.LSP.UI.Controllers
             }
             catch (Exception err)
             {
-                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return View(err.Message);
+                return RedirectToAction("Index");
             }
         }
 
@@ -129,9 +129,7 @@ namespace NEW.LSP.UI.Controllers
         {
             try
             {
-                //check
-                if (Request.Form["NPSN"].ToString() != Session["NPSN"].ToString()) { return RedirectToAction("Index"); }
-                //check
+                
 
                 userLogin = Session["userLogin"].ToString();
                 Tb_Jejaring obj = new Tb_Jejaring();
@@ -147,7 +145,7 @@ namespace NEW.LSP.UI.Controllers
             }
             catch (Exception err)
             {
-                return RedirectToAction("Create");
+                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return View(err.Message);
             }
         }
 

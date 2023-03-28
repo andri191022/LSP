@@ -23,6 +23,7 @@ namespace NEW.LSP.UI.Models
             this.editor = item.editor;
             this.Nama_Sekolah = item.Nama_Sekolah;
             this.NamaKabupaten = item.NamaKabupaten;
+            this.Username = item.Username;
         }
         [Required(ErrorMessage = "Harap masukan data Nomor Lisensi")]
         [Display(Name = "Nomor Lisensi")]
@@ -47,6 +48,9 @@ namespace NEW.LSP.UI.Models
 
         [Display(Name = "Kabupaten")]
         public new string NamaKabupaten { get; set; }
+
+        [Display(Name = "Email")]
+        public new string Username { get; set; }
 
     }
 }

@@ -74,6 +74,14 @@ namespace NEW.LSP.UI.Controllers
                 objKK = Tb_Kompetensi_KeahlianItem.GetAll();
                 objSMK = Tb_SMKItem.GetAll();
 
+                int npsn = 0;
+                int.TryParse(Session["NPSN"].ToString(), out npsn);
+                Tb_SMK_cstm objSMKe = new Tb_SMK_cstm();
+                objSMKe = Tb_SMK_cstmItem.GetByPKCustom(npsn);
+
+                //b.[Nomer_Lisensi], b.NPSN, d.Nama_Sekolah ,e.NamaKabupaten
+                EmpInfo.NPSN = objSMKe.NPSN; 
+
                 Dictionary<string, string> ooList = new Dictionary<string, string>();
                 foreach (var xx in objKK)
                 {

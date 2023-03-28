@@ -278,6 +278,7 @@
             $("#mnuAdminProvinsi").removeClass("active");
             $("#mnuAdminSekolah").removeClass("active");
             $("#mnuSMKKK").removeClass("active");
+            $("#mnuDataAsesor").removeClass("active");
 
 
             $("#" + t).addClass("active");
@@ -294,6 +295,7 @@
             $("#mnuSMKKKSKL").removeClass("active");
             $("#mnuProfileSKL").removeClass("active");
             $("#mnuProfileKKSKL").removeClass("active");
+            $("#mnuDataAsesorSKL").removeClass("active");
 
             $("#" + t).addClass("active");
         }
@@ -304,6 +306,7 @@
                 url: url,
                 type: type ? type : 'GET',
                 data: data,
+                async: false,
                 contentType: 'application/json'
             });
         }

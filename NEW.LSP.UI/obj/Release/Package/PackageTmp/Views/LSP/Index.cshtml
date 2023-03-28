@@ -1,8 +1,6 @@
 ﻿@model IEnumerable<NEW.LSP.Dto.Custom.Tb_LSP_cstm>
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 
 <p>
@@ -15,6 +13,7 @@
             <th style="text-align:center">Nomor Lisensi</th>
             @*<th style="text-align:center">NPSN</th>*@
             <th style="text-align:center">Nama Sekolah(LSP P1)</th>
+            <th style="text-align:center">Email</th>
             <th style="text-align:center">Kabupaten</th>
             <th style="text-align:center">Status</th>
             @*<th style="text-align:center">Berlaku Hingga</th>*@
@@ -26,37 +25,42 @@
         @foreach (var item in Model)
         {
 
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nomer_Lisensi)
-                </td>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.NPSN)
-                    </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nama_Sekolah)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NamaKabupaten)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status_LSP)
-                </td>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.Berlaku_Sampai)
-                    </td>*@
-                <td style="text-align:center">
-                    @Html.ActionLink(" ", "Edit", new { id = item.Nomer_Lisensi }, new { @class = "fas fa-edit" }) &nbsp;&nbsp;| &nbsp;&nbsp;
-                    @Html.ActionLink(" ", "Details", new { id = item.Nomer_Lisensi }, new { @class = "fas fa-search" })&nbsp;&nbsp;| &nbsp;&nbsp;
-                    @*@Html.ActionLink("Delete", "Delete", new { id = item.Nomer_Lisensi })*@
-                    <a href="#">
-                        <span onclick="deleteConfirm('@item.Nomer_Lisensi','@item.Nama_Sekolah');">
-                            <i class="fa fa-trash" data-toggle="modal" data-target="#modal-primary"></i>
-                        </span>
-                    </a>
-                </td>
-            </tr>
-        }
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nomer_Lisensi)
+    </td>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.NPSN)
+        </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.Nama_Sekolah)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Username)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.NamaKabupaten)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Status_LSP)
+    </td>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.Berlaku_Sampai)
+        </td>*@
+    <td style="text-align:center">
+        @Html.ActionLink(" ", "Edit", new { id = item.Nomer_Lisensi }, new { @class = "fas fa-edit" }) &nbsp;&nbsp;| &nbsp;&nbsp;
+        @Html.ActionLink(" ", "Details", new { id = item.Nomer_Lisensi }, new { @class = "fas fa-search" })&nbsp;&nbsp;| &nbsp;&nbsp;
+        @*@Html.ActionLink("Delete", "Delete", new { id = item.Nomer_Lisensi })*@
+        <a href="#">
+            <span onclick="deleteConfirm('@item.Nomer_Lisensi','@item.Nama_Sekolah');">
+                <i class="fa fa-trash" data-toggle="modal" data-target="#modal-primary"></i>
+            </span>
+        </a>
+    </td>
+</tr>
+}
     </tbody>
 </table>
 

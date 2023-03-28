@@ -30,3 +30,13 @@ D:\dhani\NEW.LSP.UI\NEW.LSP.Dta\obj\Release\NEW.LSP.Dta.csproj.CoreCompileInputs
 D:\dhani\NEW.LSP.UI\NEW.LSP.Dta\obj\Release\NEW.LSP.Dta.csproj.CopyComplete
 D:\dhani\NEW.LSP.UI\NEW.LSP.Dta\obj\Release\NEW.LSP.Dta.dll
 D:\dhani\NEW.LSP.UI\NEW.LSP.Dta\obj\Release\NEW.LSP.Dta.pdb
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dta\bin\Release\NEW.LSP.Dta.dll
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dta\bin\Release\NEW.LSP.Dta.pdb
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dta\bin\Release\NEW.LSP.Dto.dll
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dta\bin\Release\MySql.Data.dll
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dta\bin\Release\NEW.LSP.Dto.pdb
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dta\obj\Release\NEW.LSP.Dta.csproj.AssemblyReference.cache
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dta\obj\Release\NEW.LSP.Dta.csproj.CoreCompileInputs.cache
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dta\obj\Release\NEW.LSP.Dta.csproj.CopyComplete
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dta\obj\Release\NEW.LSP.Dta.dll
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dta\obj\Release\NEW.LSP.Dta.pdb

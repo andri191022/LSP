@@ -13,6 +13,7 @@ namespace NEW.LSP.Dto.Custom
         public Int32 Kode_KK_Terlisensi { get; set; }
         public string Nomer_Lisensi { get; set; }
         public Int32 Kode_KK { get; set; }
+        public Int32? Kode_Skema { get; set; }
         public string Status_KK_Terlisensi { get; set; }
         public Int32? Jumlah_asesor { get; set; }
         public bool? isDeleted { get; set; }
@@ -24,6 +25,7 @@ namespace NEW.LSP.Dto.Custom
         public string Nama_KK { get; set; }
         public string Nama_Sekolah { get; set; }
         public string NamaKabupaten { get; set; }
+        public string Skema { get; set; }
         #endregion
         public Tb_Kompetensi_Keahlian_Terlisensi_cstm Map(System.Data.IDataReader reader)
         {
@@ -43,6 +45,8 @@ namespace NEW.LSP.Dto.Custom
             obj.Nama_KK = reader["Nama_KK"] == DBNull.Value ? null : reader["Nama_KK"].ToString();
             obj.Nama_Sekolah = reader["Nama_Sekolah"] == DBNull.Value ? null : reader["Nama_Sekolah"].ToString();
             obj.NamaKabupaten = reader["NamaKabupaten"] == DBNull.Value ? null : reader["NamaKabupaten"].ToString();
+            obj.Kode_Skema = reader["Kode_Skema"] == DBNull.Value ? (Int32?)null : Convert.ToInt32(reader["Kode_Skema"]);
+            obj.Skema = reader["Skema"] == DBNull.Value ? null : reader["Skema"].ToString();
 
             return obj;
         }

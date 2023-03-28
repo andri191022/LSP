@@ -90,6 +90,21 @@
                 <hr />
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-3" style="font-weight: bold;">
+                @Html.DisplayNameFor(model => model.Skema)
+                <hr />
+            </div>
+            <div class="col-1 text-center">
+                :
+            </div>
+            <div class="col-8">
+                @Html.DisplayFor(model => model.Kode_Skema) &nbsp;-&nbsp; @Html.DisplayFor(model => model.Skema)
+                <hr />
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-3" style="font-weight: bold;">
                 @Html.DisplayNameFor(model => model.Tahun_pelajaran)
@@ -116,7 +131,20 @@
                 <hr />
             </div>
         </div>
-
+        <div class="row">
+            <div class="col-3" style="font-weight: bold;">
+                @Html.DisplayNameFor(model => model.UploadName)
+                <hr />
+            </div>
+            <div class="col-1 text-center">
+                :
+            </div>
+            <div class="col-8">
+                @{ string fileName = @Model.UploadName;}
+                <a href="~/UploadedFiles/@fileName" target="_blank">@Html.DisplayFor(model => model.UploadName)</a> &nbsp;
+                <hr />
+            </div>
+        </div>
 
     </div>
     <div class="card-footer">

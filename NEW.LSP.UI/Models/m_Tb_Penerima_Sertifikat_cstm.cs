@@ -27,7 +27,11 @@ namespace NEW.LSP.UI.Models
             this.NPSN = item.NPSN;
             this.Nama_KK = item.Nama_KK;
             this.Nama_Sekolah = item.Nama_Sekolah;
-            this.NamaKabupaten = item.NamaKabupaten;            
+            this.NamaKabupaten = item.NamaKabupaten;
+            this.Kode_Skema = item.Kode_Skema;
+            this.Skema = item.Skema;
+            this.UploadName = item.UploadName;
+       
 
         }
         [Display(Name = "Kode Penerima Sertifikat")]
@@ -65,5 +69,16 @@ namespace NEW.LSP.UI.Models
 
         [Display(Name = "Kabupaten")]
         public new string NamaKabupaten { get; set; }
+
+        [Required(ErrorMessage = "Harap masukan data Skema")]
+        [Display(Name = "Kode Skema")]
+        public new Int32? Kode_Skema { get; set; }
+
+        [Required(ErrorMessage = "Harap masukan data Skema")]
+        [Display(Name = "Skema")]
+        public new string Skema { get; set; }
+
+        [Display(Name ="Upload File")]
+        public HttpPostedFileBase UploadFile { get; set; }
     }
 }

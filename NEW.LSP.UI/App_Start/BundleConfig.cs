@@ -43,7 +43,9 @@ namespace NEW.LSP.UI
                 "~/Content/select2-bootstrap4-theme/select2-bootstrap4.min.css",
                 "~/Content/toastr/toastr.css",
                 "~/Content/sweetalert2/sweetalert2.min.css",
-                "~/Content/dist/css/component-chosen.min.css"
+                "~/Content/dist/css/component-chosen.min.css",
+                "~/Content/dist/css/select.dataTables.min.css",
+                "~/Content/dist/css/editor.dataTables.min.css"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
@@ -71,7 +73,9 @@ namespace NEW.LSP.UI
                        "~/Content/toastr/toastr.min.js",
                       "~/Content/sweetalert2/sweetalert2.min.js",
                       "~/Content/dist/js/chosen.jquery.min.js",
-                      "~/Content/dist/js/init.js"
+                      "~/Content/dist/js/init.js",
+                      "~/Content/dist/js/dataTables.select.min.js",
+                      "~/Content/dist/js/dataTables.editor.min.js"
 
                       ));
 

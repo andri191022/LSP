@@ -26,6 +26,10 @@
                 @*@Html.DisplayNameFor(x => x.Nama_KK)*@
             </th>
             <th style="text-align:center">
+                Skema
+                @*@Html.DisplayNameFor(x => x.Nama_KK)*@
+            </th>
+            <th style="text-align:center">
                 Jumlah Asesor
                 @*@Html.DisplayNameFor(x => x.Jumlah_asesor)*@
             </th>
@@ -40,32 +44,35 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nama_Sekolah)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NamaKabupaten)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nama_KK)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Jumlah_asesor)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status_KK_Terlisensi)
-                </td>
-                <td style="text-align:center">
-                    @Html.ActionLink("   ", "Edit", new { id = item.Kode_KK_Terlisensi }, new { @class = "fas fa-edit" }) &nbsp;&nbsp;| &nbsp;&nbsp;
-                    @Html.ActionLink("   ", "Details", new { id = item.Kode_KK_Terlisensi }, new { @class = "fas fa-search" }) &nbsp;&nbsp;|&nbsp;&nbsp;
-                    <a href="#">
-                        <span onclick="deleteConfirm('@item.Kode_KK_Terlisensi', '@item.Nama_Sekolah','@item.Nama_KK');">
-                            <i class="fa fa-trash" data-toggle="modal" data-target="#modal-primary"></i>
-                        </span>
-                    </a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nama_Sekolah)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamaKabupaten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nama_KK)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Skema)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Jumlah_asesor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status_KK_Terlisensi)
+            </td>
+            <td style="text-align:center">
+                @Html.ActionLink("   ", "Edit", new { id = item.Kode_KK_Terlisensi }, new { @class = "fas fa-edit" }) &nbsp;&nbsp;| &nbsp;&nbsp;
+                @Html.ActionLink("   ", "Details", new { id = item.Kode_KK_Terlisensi }, new { @class = "fas fa-search" }) &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="#">
+                    <span onclick="deleteConfirm('@item.Kode_KK_Terlisensi', '@item.Nama_Sekolah','@item.Nama_KK');">
+                        <i class="fa fa-trash" data-toggle="modal" data-target="#modal-primary"></i>
+                    </span>
+                </a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

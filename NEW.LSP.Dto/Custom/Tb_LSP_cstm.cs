@@ -21,6 +21,7 @@ namespace NEW.LSP.Dto.Custom
         public string editor { get; set; }
         public string Nama_Sekolah { get; set; }
         public string NamaKabupaten { get; set; }
+        public string Username { get; set; }
 
         #endregion
         public Tb_LSP_cstm Map(System.Data.IDataReader reader)
@@ -38,6 +39,7 @@ namespace NEW.LSP.Dto.Custom
 
             obj.Nama_Sekolah = reader["Nama_Sekolah"] == DBNull.Value ? null : reader["Nama_Sekolah"].ToString();
             obj.NamaKabupaten = reader["NamaKabupaten"] == DBNull.Value ? null : reader["NamaKabupaten"].ToString();
+            obj.Username = string.Format("{0}", reader["Username"]);
 
             return obj;
         }

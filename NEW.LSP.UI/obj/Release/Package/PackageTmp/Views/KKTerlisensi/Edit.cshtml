@@ -67,6 +67,15 @@
                 </div>
 
                 <div class="form-group">
+                    @Html.LabelFor(model => model.Kode_Skema, htmlAttributes: new { @class = "control-label " })
+                    <div class="col-md-10">
+                        @*@Html.EditorFor(model => model.Kode_KK, new { htmlAttributes = new { @class = "form-control" } })*@
+                        @Html.DropDownListFor(model => model.Kode_Skema, ViewBag.SkemaList as SelectList, new { @class = "form-control form-control-chosen-required" })
+                        @Html.ValidationMessageFor(model => model.Kode_Skema, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
                     @Html.LabelFor(model => model.Status_KK_Terlisensi, htmlAttributes: new { @class = "control-label " })
                     <div class="col-md-10">
                         @Html.DropDownListFor(model => model.Status_KK_Terlisensi, ViewBag.StatusKKTerlisensi as SelectList, new { @class = "form-control form-control-chosen-required" })

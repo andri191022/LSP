@@ -13,6 +13,7 @@ namespace NEW.LSP.Dto.Custom
         public Int32 Kode_Penerima_Sertifikat { get; set; }
         public string Nomer_Lisensi { get; set; }
         public Int32 Kode_KK { get; set; }
+        public Int32? Kode_Skema { get; set; }
         public Int32? IDTahun_pelajaran { get; set; }
         public Int32? Jumlah_penerima_sertifikat { get; set; }
         public bool? isDeleted { get; set; }
@@ -26,6 +27,10 @@ namespace NEW.LSP.Dto.Custom
         public string Nama_KK { get; set; }
         public string Nama_Sekolah { get; set; }
         public string NamaKabupaten { get; set; }
+        public string Skema { get; set; }
+
+        public string UploadName { get; set; }
+
         #endregion
         public Tb_Penerima_Sertifikat_cstm Map(System.Data.IDataReader reader)
         {
@@ -46,6 +51,10 @@ namespace NEW.LSP.Dto.Custom
             obj.Nama_Sekolah = reader["Nama_Sekolah"] == DBNull.Value ? null : reader["Nama_Sekolah"].ToString();
             obj.NamaKabupaten = reader["NamaKabupaten"] == DBNull.Value ? null : reader["NamaKabupaten"].ToString();
             obj.NPSN = reader["NPSN"] == DBNull.Value ? (Int32?)null : Convert.ToInt32(reader["NPSN"]);
+            obj.Kode_Skema = reader["Kode_Skema"] == DBNull.Value ? (Int32?)null : Convert.ToInt32(reader["Kode_Skema"]);
+            obj.Skema = reader["Skema"] == DBNull.Value ? null : reader["Skema"].ToString();
+
+            obj.UploadName = reader["UploadName"] == DBNull.Value ? null : reader["UploadName"].ToString();
 
             return obj;
         }

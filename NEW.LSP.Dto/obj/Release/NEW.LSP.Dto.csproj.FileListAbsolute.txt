@@ -24,3 +24,11 @@ D:\dhani\NEW.LSP.UI\NEW.LSP.Dto\obj\Release\NEW.LSP.Dto.csproj.CoreCompileInputs
 D:\dhani\NEW.LSP.UI\NEW.LSP.Dto\obj\Release\NEW.LSP.Dto.csproj.CopyComplete
 D:\dhani\NEW.LSP.UI\NEW.LSP.Dto\obj\Release\NEW.LSP.Dto.dll
 D:\dhani\NEW.LSP.UI\NEW.LSP.Dto\obj\Release\NEW.LSP.Dto.pdb
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dto\bin\Release\NEW.LSP.Dto.dll
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dto\bin\Release\NEW.LSP.Dto.pdb
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dto\bin\Release\MySql.Data.dll
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dto\obj\Release\NEW.LSP.Dto.csproj.AssemblyReference.cache
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dto\obj\Release\NEW.LSP.Dto.csproj.CoreCompileInputs.cache
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dto\obj\Release\NEW.LSP.Dto.csproj.CopyComplete
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dto\obj\Release\NEW.LSP.Dto.dll
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dto\obj\Release\NEW.LSP.Dto.pdb

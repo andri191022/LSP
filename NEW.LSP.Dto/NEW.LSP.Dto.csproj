@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Custom\Tb_Admin_Sekolah_cstm.cs" />
     <Compile Include="Custom\Tb_Approval_KKTerlisensi_cstm.cs" />
+    <Compile Include="Custom\Tb_Data_Asesor_cstm.cs" />
     <Compile Include="Custom\Tb_Home_cstm.cs" />
     <Compile Include="Custom\Tb_Jejaring_cstm.cs" />
     <Compile Include="Custom\Tb_Kompetensi_Keahlian_Terlisensi_cstm.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Tb_Admin_Provinsi.cs" />
     <Compile Include="Tb_Admin_Sekolah.cs" />
     <Compile Include="Tb_Approval_KKTerlisensi.cs" />
+    <Compile Include="Tb_Data_Asesor.cs" />
     <Compile Include="Tb_Jejaring.cs" />
     <Compile Include="Tb_Kabupaten.cs" />
     <Compile Include="Tb_Kompetensi_Keahlian.cs" />
@@ -67,6 +69,7 @@
     <Compile Include="Tb_Menu.cs" />
     <Compile Include="Tb_Penerima_Sertifikat.cs" />
     <Compile Include="Tb_Pengumuman.cs" />
+    <Compile Include="Tb_Skema.cs" />
     <Compile Include="Tb_SMK.cs" />
     <Compile Include="Tb_SMK_Kompetensi_Keahlian.cs" />
     <Compile Include="Tb_Tahun_Pelajaran.cs" />

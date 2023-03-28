@@ -1,9 +1,7 @@
-﻿@model IEnumerable < NEW.LSP.Dto.Custom.Tb_Penerima_Sertifikat_cstm>
+﻿@model IEnumerable<NEW.LSP.Dto.Custom.Tb_Penerima_Sertifikat_cstm>
 
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 
 <p>
@@ -23,7 +21,7 @@
                 @*@Html.DisplayNameFor(model => model.NamaKabupaten)*@
             </th>
             <th style="text-align:center">
-                Kompetensi Keahlian
+                Skema
                 @*@Html.DisplayNameFor(model => model.Nama_KK)*@
             </th>
             <th style="text-align:center">
@@ -34,6 +32,10 @@
                 Jumlah Penerima Sertifikat
                 @*@Html.DisplayNameFor(model => model.Jumlah_penerima_sertifikat)*@
             </th>
+            <th style="text-align:center">
+                Lampiran
+                @*@Html.DisplayNameFor(model => model.Tahun_pelajaran)*@
+            </th>
             <th style="text-align:center">Aksi</th>
         </tr>
 
@@ -41,34 +43,37 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nama_Sekolah)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NamaKabupaten)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nama_KK)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Tahun_pelajaran)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Jumlah_penerima_sertifikat)
-                </td>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nama_Sekolah)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NamaKabupaten)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Skema)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Tahun_pelajaran)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Jumlah_penerima_sertifikat)
+    </td>
+    <td>
+        @{ string fileName = @item.UploadName;}
 
-                <td style="text-align:center">
-                    @Html.ActionLink("   ", "Edit", new { id = item.Kode_Penerima_Sertifikat }, new { @class = "fas fa-edit" }) &nbsp;&nbsp;| &nbsp;&nbsp;
-                    @Html.ActionLink("   ", "Details", new { id = item.Kode_Penerima_Sertifikat }, new { @class = "fas fa-search" }) &nbsp;&nbsp;|&nbsp;&nbsp;
-                    <a href="#">
-                        <span onclick="deleteConfirm('@item.Kode_Penerima_Sertifikat','@item.Nama_Sekolah','@item.Nama_KK');">
-                            <i class="fa fa-trash" data-toggle="modal" data-target="#modal-primary"></i>
-                        </span>
-                    </a>
-                </td>
-            </tr>
-        }
+        <a href="~/UploadedFiles/@fileName" target="_blank">@Html.DisplayFor(modelItem => item.UploadName)</a>
+    </td>
+    <td style="text-align:center">
+        @Html.ActionLink("   ", "Edit", new { id = item.Kode_Penerima_Sertifikat }, new { @class = "fas fa-edit" }) &nbsp;&nbsp;| &nbsp;&nbsp;
+        @Html.ActionLink("   ", "Details", new { id = item.Kode_Penerima_Sertifikat }, new { @class = "fas fa-search" }) &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="#">
+            <span onclick="deleteConfirm('@item.Kode_Penerima_Sertifikat','@item.Nama_Sekolah','@item.Skema');">
+                <i class="fa fa-trash" data-toggle="modal" data-target="#modal-primary"></i>
+            </span>
+        </a>
+    </td>
+</tr>}
 
     </tbody>
 </table>
@@ -92,7 +97,7 @@
 
     function deleteConfirm(id, a, b) {
         $("#addMsg1").text("Nama Sekolah : " + a);
-        $("#addMsg2").text("Kompetensi Keahlian : " + b);
+        $("#addMsg2").text("Skema : " + b);
         $("#noID").text(id);
     }
 

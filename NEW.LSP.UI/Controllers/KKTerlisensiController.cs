@@ -70,9 +70,11 @@ namespace NEW.LSP.UI.Controllers
                 Tb_Kompetensi_Keahlian_Terlisensi_cstm EmpInfo = new Tb_Kompetensi_Keahlian_Terlisensi_cstm();
                 List<Tb_Kompetensi_Keahlian> objKK = new List<Tb_Kompetensi_Keahlian>();
                 List<Tb_LSP_cstm> objLSP = new List<Tb_LSP_cstm>();
+                List<Tb_Skema> objSKM = new List<Tb_Skema>();
 
                 objKK = Tb_Kompetensi_KeahlianItem.GetAll();
                 objLSP = Tb_LSP_cstmItem.GetAll();
+                objSKM = Tb_SkemaItem.GetAll();
 
                 // kode kk
                 Dictionary<string, string> ooList = new Dictionary<string, string>();
@@ -82,6 +84,14 @@ namespace NEW.LSP.UI.Controllers
                 }
                 ViewBag.Kode_KKList = dropDownGenerate.toSelectCustom(ooList);
                 //
+
+                ooList = new Dictionary<string, string>();
+                foreach (var xx in objSKM)
+                {
+                    ooList.Add(xx.Kode_Skema.ToString(), xx.Kode_Skema.ToString() + " - " + xx.Skema);
+                }
+                ViewBag.SkemaList = dropDownGenerate.toSelectCustom(ooList);
+                ///
 
                 ooList = new Dictionary<string, string>();
                 foreach (var xx in objLSP)
@@ -140,9 +150,11 @@ namespace NEW.LSP.UI.Controllers
                 Tb_Kompetensi_Keahlian_Terlisensi_cstm EmpInfo = new Tb_Kompetensi_Keahlian_Terlisensi_cstm();
                 List<Tb_Kompetensi_Keahlian> objKK = new List<Tb_Kompetensi_Keahlian>();
                 List<Tb_LSP_cstm> objLSP = new List<Tb_LSP_cstm>();
+                List<Tb_Skema> objSKM = new List<Tb_Skema>();
 
                 objKK = Tb_Kompetensi_KeahlianItem.GetAll();
                 objLSP = Tb_LSP_cstmItem.GetAll();
+                objSKM = Tb_SkemaItem.GetAll();
 
                 EmpInfo = Tb_Kompetensi_Keahlian_Terlisensi_cstmItem.GetByPK(ID);
 
@@ -154,6 +166,14 @@ namespace NEW.LSP.UI.Controllers
                 }
                 ViewBag.Kode_KKList = dropDownGenerate.toSelectCustom(ooList);
                 //
+
+                ooList = new Dictionary<string, string>();
+                foreach (var xx in objSKM)
+                {
+                    ooList.Add(xx.Kode_Skema.ToString(), xx.Kode_Skema.ToString() + " - " + xx.Skema);
+                }
+                ViewBag.SkemaList = dropDownGenerate.toSelectCustom(ooList);
+                ///
 
                 ooList = new Dictionary<string, string>();
                 foreach (var xx in objLSP)

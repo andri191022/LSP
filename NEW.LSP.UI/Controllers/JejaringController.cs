@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace NEW.LSP.UI.Controllers
 {
- 
+
     public class JejaringController : BaseController
     {
         // GET: Jejaring
@@ -64,7 +64,7 @@ namespace NEW.LSP.UI.Controllers
         public ActionResult Create()
         {
             try
-            {          
+            {
                 Tb_Jejaring_cstm obj = new Tb_Jejaring_cstm();
                 List<Tb_Kompetensi_Keahlian> objKK = new List<Tb_Kompetensi_Keahlian>();
                 List<Tb_SMK> objSMK = new List<Tb_SMK>();
@@ -124,7 +124,7 @@ namespace NEW.LSP.UI.Controllers
                 obj.creator = userLogin;
                 obj.created = DateTime.Now;
 
-                Tb_JejaringItem.Insert(obj);            
+                Tb_JejaringItem.Insert(obj);
 
                 return RedirectToAction("Index");
             }
@@ -233,7 +233,56 @@ namespace NEW.LSP.UI.Controllers
             {
                 Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj); return View(err.Message);
             }
-        }       
+        }
 
+        //Custom
+        [Authorize]
+        public JsonResult IsExist(string no, string b)
+        {
+            try
+            {
+                bool status;
+
+                Tb_Pengumuman obj = new Tb_Pengumuman();
+                obj = Tb_Pengumuman_cstmItem.GetByNo(no);
+                if (obj != null)
+                {
+                    //Already registered  
+                    status = false;
+                }
+                else
+                {
+                    //Available to use  
+                    status = true;
+                }
+
+                return Json(status, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception err)
+            {
+                Tb_Log_Error obj = new Tb_Log_Error(); obj.FunctionName = MethodBase.GetCurrentMethod().Name; obj.Menu = this.GetType().Name; obj.ErrorLog = err.ToString(); obj.creator = "System"; obj.created = DateTime.Now; Tb_Log_ErrorItem.Insert(obj);
+                return Json(false, err.Message);
+            }
+        }
+
+
+        [Authorize]
+        [HttpPost]
+        public string CheckData(string NPSNJ, string KodeKK)
+        {
+            try
+            {
+                Tb_Jejaring_cstm obj = new Tb_Jejaring_cstm();
+                obj = Tb_Jejaring_cstmItem.GetByNPSNJKodeKK(NPSNJ, KodeKK);
+
+                if (obj == null) { return "OK"; } else { return "Exist"; }
+            }
+            catch (Exception err)
+            {
+                return err.Message;
+            }
+
+
+        }
     }
 }

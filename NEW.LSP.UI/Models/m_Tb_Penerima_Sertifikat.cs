@@ -42,6 +42,9 @@ namespace NEW.LSP.UI.Models
         [Display(Name = "Jumlah Penerima Sertifikat")]
         [Range(1, 1000)]
         public new Int32? Jumlah_penerima_sertifikat { get; set; }
-  
+
+        [Display(Name = "Upload File")]
+        public HttpPostedFileBase UploadFile { get; set; }
+
     }
 }

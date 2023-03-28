@@ -6,14 +6,16 @@ using NEW.LSP.Logic;
 using NEW.LSP.UI.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
+using System.Web;
 using System.Web.Mvc;
 
 
 
 namespace NEW.LSP.UI.Controllers
 {
-  
+
     public class PenerimaSertifikatController : BaseController
     {
         // GET: PenerimaSertifikat
@@ -69,9 +71,11 @@ namespace NEW.LSP.UI.Controllers
                 List<Tb_LSP_cstm> objLSP = new List<Tb_LSP_cstm>();
                 List<Tb_Kompetensi_Keahlian> objKK = new List<Tb_Kompetensi_Keahlian>();
                 List<Tb_Tahun_Pelajaran> objTP = new List<Tb_Tahun_Pelajaran>();
+                List<Tb_Skema> objSKM = new List<Tb_Skema>();
                 objLSP = Tb_LSP_cstmItem.GetAll();
                 objKK = Tb_Kompetensi_KeahlianItem.GetAll();
                 objTP = Tb_Tahun_PelajaranItem.GetAll();
+                objSKM = Tb_SkemaItem.GetAll();
 
                 //begin
                 Dictionary<string, string> ooList = new Dictionary<string, string>();
@@ -88,8 +92,17 @@ namespace NEW.LSP.UI.Controllers
                 {
                     ooList.Add(xx.Kode_KK.ToString(), xx.Kode_KK.ToString() + " - " + xx.Nama_KK);
                 }
-                ViewBag.Kode_KKList = dropDownGenerate.toSelectCustom(ooList);
-                //end
+                ViewBag.Kode_kkList = dropDownGenerate.toSelectCustom(ooList);
+                ///
+
+                //begin
+                ooList = new Dictionary<string, string>();
+                foreach (var xx in objSKM)
+                {
+                    ooList.Add(xx.Kode_Skema.ToString(), xx.Kode_Skema.ToString() + " - " + xx.Skema);
+                }
+                ViewBag.SkemaList = dropDownGenerate.toSelectCustom(ooList);
+                ///
 
                 //begin
                 ooList = new Dictionary<string, string>();
@@ -125,6 +138,22 @@ namespace NEW.LSP.UI.Controllers
                 obj.creator = userLogin;
                 obj.created = DateTime.Now;
 
+                string n = Guid.NewGuid().ToString();
+
+                HttpFileCollectionBase file = Request.Files;
+                if (file.Count == 1)
+                {
+                    HttpPostedFileBase postedFile = Request.Files["ImageFile"];
+                    string path = Server.MapPath("~/UploadedFiles/");
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+
+                    postedFile.SaveAs(path + n.Substring(0, 8) + Path.GetFileName(postedFile.FileName));
+                    obj.UploadName = n.Substring(0, 8) + Path.GetFileName(postedFile.FileName);
+                }
+
                 Tb_Penerima_SertifikatItem.Insert(obj);
 
                 return RedirectToAction("Index");
@@ -145,9 +174,11 @@ namespace NEW.LSP.UI.Controllers
                 List<Tb_LSP_cstm> objLSP = new List<Tb_LSP_cstm>();
                 List<Tb_Kompetensi_Keahlian> objKK = new List<Tb_Kompetensi_Keahlian>();
                 List<Tb_Tahun_Pelajaran> objTP = new List<Tb_Tahun_Pelajaran>();
+                List<Tb_Skema> objSKM = new List<Tb_Skema>();
                 objLSP = Tb_LSP_cstmItem.GetAll();
                 objKK = Tb_Kompetensi_KeahlianItem.GetAll();
                 objTP = Tb_Tahun_PelajaranItem.GetAll();
+                objSKM = Tb_SkemaItem.GetAll();
 
                 Int32 ID = 0;
                 Int32.TryParse(id, out ID);
@@ -168,8 +199,17 @@ namespace NEW.LSP.UI.Controllers
                 {
                     ooList.Add(xx.Kode_KK.ToString(), xx.Kode_KK.ToString() + " - " + xx.Nama_KK);
                 }
-                ViewBag.Kode_KKList = dropDownGenerate.toSelectCustom(ooList);
-                //end
+                ViewBag.Kode_kkList = dropDownGenerate.toSelectCustom(ooList);
+                ///
+
+                //begin
+                ooList = new Dictionary<string, string>();
+                foreach (var xx in objSKM)
+                {
+                    ooList.Add(xx.Kode_Skema.ToString(), xx.Kode_Skema.ToString() + " - " + xx.Skema);
+                }
+                ViewBag.SkemaList = dropDownGenerate.toSelectCustom(ooList);
+                ///
 
                 //begin
                 ooList = new Dictionary<string, string>();
@@ -204,6 +244,22 @@ namespace NEW.LSP.UI.Controllers
                 obj.Jumlah_penerima_sertifikat = Convert.ToInt32(Request.Form["Jumlah_penerima_sertifikat"]);
                 obj.editor = userLogin;
                 obj.edited = DateTime.Now;
+
+                string n = Guid.NewGuid().ToString();
+
+                HttpFileCollectionBase file = Request.Files;
+                if (file.Count == 1)
+                {
+                    HttpPostedFileBase postedFile = Request.Files["ImageFile"];
+                    string path = Server.MapPath("~/UploadedFiles/");
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+
+                    postedFile.SaveAs(path + n.Substring(0, 8) + Path.GetFileName(postedFile.FileName));
+                    obj.UploadName = n.Substring(0, 8) + Path.GetFileName(postedFile.FileName);
+                }
 
                 Tb_Penerima_SertifikatItem.Update(obj);
 

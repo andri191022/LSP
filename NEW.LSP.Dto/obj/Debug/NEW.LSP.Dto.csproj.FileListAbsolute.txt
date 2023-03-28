@@ -30,3 +30,17 @@ D:\dhani\NEW.LSP.UI\NEW.LSP.Dto\obj\Debug\NEW.LSP.Dto.csproj.CoreCompileInputs.c
 D:\dhani\NEW.LSP.UI\NEW.LSP.Dto\obj\Debug\NEW.LSP.Dto.csproj.CopyComplete
 D:\dhani\NEW.LSP.UI\NEW.LSP.Dto\obj\Debug\NEW.LSP.Dto.dll
 D:\dhani\NEW.LSP.UI\NEW.LSP.Dto\obj\Debug\NEW.LSP.Dto.pdb
+C:\Users\andri\Downloads\LSP-master\LSP-master\NEW.LSP.Dto\bin\Debug\NEW.LSP.Dto.dll
+C:\Users\andri\Downloads\LSP-master\LSP-master\NEW.LSP.Dto\bin\Debug\NEW.LSP.Dto.pdb
+C:\Users\andri\Downloads\LSP-master\LSP-master\NEW.LSP.Dto\obj\Debug\NEW.LSP.Dto.csproj.AssemblyReference.cache
+C:\Users\andri\Downloads\LSP-master\LSP-master\NEW.LSP.Dto\obj\Debug\NEW.LSP.Dto.csproj.CoreCompileInputs.cache
+C:\Users\andri\Downloads\LSP-master\LSP-master\NEW.LSP.Dto\obj\Debug\NEW.LSP.Dto.csproj.CopyComplete
+C:\Users\andri\Downloads\LSP-master\LSP-master\NEW.LSP.Dto\obj\Debug\NEW.LSP.Dto.dll
+C:\Users\andri\Downloads\LSP-master\LSP-master\NEW.LSP.Dto\obj\Debug\NEW.LSP.Dto.pdb
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dto\bin\Debug\NEW.LSP.Dto.dll
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dto\bin\Debug\NEW.LSP.Dto.pdb
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dto\obj\Debug\NEW.LSP.Dto.csproj.CoreCompileInputs.cache
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dto\obj\Debug\NEW.LSP.Dto.csproj.CopyComplete
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dto\obj\Debug\NEW.LSP.Dto.dll
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dto\obj\Debug\NEW.LSP.Dto.pdb
+D:\Project\LSP-master\LSP-master\NEW.LSP.Dto\obj\Debug\NEW.LSP.Dto.csproj.AssemblyReference.cache

@@ -25,21 +25,22 @@ namespace NEW.LSP.Dta
 SET NOCOUNT OFF
 DECLARE @Err int
 
-INSERT INTO [Tb_Penerima_Sertifikat]([Nomer_Lisensi], [Kode_KK], [IDTahun_pelajaran], [Jumlah_penerima_sertifikat], [isDeleted], [created], [creator], [edited], [editor]) 
-VALUES      (@Nomer_Lisensi, @Kode_KK, @IDTahun_pelajaran, @Jumlah_penerima_sertifikat, @isDeleted, @created, @creator, @edited, @editor)
+INSERT INTO [Tb_Penerima_Sertifikat]([Nomer_Lisensi], [Kode_KK], [IDTahun_pelajaran], [Jumlah_penerima_sertifikat], UploadName, [isDeleted], [created], [creator], [edited], [editor]) 
+VALUES      (@Nomer_Lisensi, @Kode_KK, @IDTahun_pelajaran, @Jumlah_penerima_sertifikat, @UploadName, @isDeleted, @created, @creator, @edited, @editor)
 
 SET @Err = @@Error
 
 DECLARE @_Kode_Penerima_Sertifikat Int
 SELECT @_Kode_Penerima_Sertifikat = SCOPE_IDENTITY()
 
-SELECT  Kode_Penerima_Sertifikat, Nomer_Lisensi, Kode_KK, IDTahun_pelajaran, Jumlah_penerima_sertifikat, isDeleted, created, creator, edited, editor
+SELECT  Kode_Penerima_Sertifikat, Nomer_Lisensi, Kode_KK, IDTahun_pelajaran, Jumlah_penerima_sertifikat, UploadName,  isDeleted, created, creator, edited, editor
 FROM    [Tb_Penerima_Sertifikat]
 WHERE   [Kode_Penerima_Sertifikat]  = @_Kode_Penerima_Sertifikat";
             context.AddParameter("@Nomer_Lisensi", string.Format("{0}", obj.Nomer_Lisensi));
             context.AddParameter("@Kode_KK", obj.Kode_KK);
             context.AddParameter("@IDTahun_pelajaran", obj.IDTahun_pelajaran);
             context.AddParameter("@Jumlah_penerima_sertifikat", obj.Jumlah_penerima_sertifikat);
+            context.AddParameter("@UploadName", obj.UploadName);
             context.AddParameter("@isDeleted", obj.isDeleted);
             context.AddParameter("@created", obj.created);
             context.AddParameter("@creator", string.Format("{0}", obj.creator));
@@ -67,20 +68,21 @@ SET         [Nomer_Lisensi] = @Nomer_Lisensi,
             [IDTahun_pelajaran] = @IDTahun_pelajaran,
             [Jumlah_penerima_sertifikat] = @Jumlah_penerima_sertifikat,
             [isDeleted] = @isDeleted,
-          
+            UploadName =   @UploadName,
             [edited] = @edited,
             [editor] = @editor
 WHERE       [Kode_Penerima_Sertifikat]  = @Kode_Penerima_Sertifikat
 
 SET @Err = @@Error
 
-SELECT  Kode_Penerima_Sertifikat, Nomer_Lisensi, Kode_KK, IDTahun_pelajaran, Jumlah_penerima_sertifikat, isDeleted, created, creator, edited, editor 
+SELECT  Kode_Penerima_Sertifikat, Nomer_Lisensi, Kode_KK, IDTahun_pelajaran, Jumlah_penerima_sertifikat, UploadName, isDeleted, created, creator, edited, editor 
 FROM    [Tb_Penerima_Sertifikat]
 WHERE   [Kode_Penerima_Sertifikat]  = @Kode_Penerima_Sertifikat";
             context.AddParameter("@Nomer_Lisensi", string.Format("{0}", obj.Nomer_Lisensi));
             context.AddParameter("@Kode_KK", obj.Kode_KK);
             context.AddParameter("@IDTahun_pelajaran", obj.IDTahun_pelajaran);
             context.AddParameter("@Jumlah_penerima_sertifikat", obj.Jumlah_penerima_sertifikat);
+            context.AddParameter("@UploadName", obj.UploadName);
             context.AddParameter("@isDeleted", obj.isDeleted);
             context.AddParameter("@creator", string.Format("{0}", obj.creator));
             context.AddParameter("@edited", obj.edited);
@@ -131,7 +133,7 @@ WHERE   [Kode_Penerima_Sertifikat]  = @Kode_Penerima_Sertifikat";
         public static List<Tb_Penerima_Sertifikat> GetAll()
         {
             IDBHelper context = new DBHelper();
-            string sqlQuery = "SELECT Kode_Penerima_Sertifikat, Nomer_Lisensi, Kode_KK, IDTahun_pelajaran, Jumlah_penerima_sertifikat, isDeleted, created, creator, edited, editor FROM Tb_Penerima_Sertifikat";
+            string sqlQuery = "SELECT Kode_Penerima_Sertifikat, Nomer_Lisensi, Kode_KK, IDTahun_pelajaran, Jumlah_penerima_sertifikat,UploadName, isDeleted, created, creator, edited, editor FROM Tb_Penerima_Sertifikat";
             context.CommandText = sqlQuery;
             context.CommandType =  System.Data.CommandType.Text;
             return DBUtil.ExecuteMapper<Tb_Penerima_Sertifikat>(context, new Tb_Penerima_Sertifikat());
@@ -171,7 +173,7 @@ WHERE   [Kode_Penerima_Sertifikat]  = @Kode_Penerima_Sertifikat";
         public static Tb_Penerima_Sertifikat GetByPK(Int32 Kode_Penerima_Sertifikat)
         {
             IDBHelper context = new DBHelper();
-            string sqlQuery = @"SELECT Kode_Penerima_Sertifikat, Nomer_Lisensi, Kode_KK, IDTahun_pelajaran, Jumlah_penerima_sertifikat, isDeleted, created, creator, edited, editor FROM Tb_Penerima_Sertifikat
+            string sqlQuery = @"SELECT Kode_Penerima_Sertifikat, Nomer_Lisensi, Kode_KK, IDTahun_pelajaran, Jumlah_penerima_sertifikat,UploadName,  isDeleted, created, creator, edited, editor FROM Tb_Penerima_Sertifikat
             WHERE [Kode_Penerima_Sertifikat]  = @Kode_Penerima_Sertifikat";
             context.AddParameter("@Kode_Penerima_Sertifikat", Kode_Penerima_Sertifikat);
             context.CommandText = sqlQuery;
